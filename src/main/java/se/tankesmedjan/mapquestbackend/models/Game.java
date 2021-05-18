@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -17,10 +18,10 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double startLat;
-    private Double startLong;
-    private Double endLat;
-    private Double endLong;
+    private double startLat;
+    private double startLong;
+    private double endLat;
+    private double endLong;
 
     @ManyToOne
     @JoinColumn(name = "storyId", referencedColumnName = "id")
