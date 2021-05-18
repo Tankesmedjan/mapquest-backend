@@ -24,4 +24,6 @@ public class GameTeam {
     @JoinColumn(name = "teamId")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Team teamId;
+
+
 }

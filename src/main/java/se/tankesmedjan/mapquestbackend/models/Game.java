@@ -22,9 +22,15 @@ public class Game {
     private Long startLong;
     private Long endLat;
     private Long endLong;
-    private String userId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId", referencedColumnName = "id")
+    private User user;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "game")
     @JsonIgnore
     private List<Team> team;
+
+
+
 }
