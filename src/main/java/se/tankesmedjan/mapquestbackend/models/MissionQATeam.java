@@ -9,19 +9,18 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class TeamPlayer {
+public class MissionQATeam {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "teamId", nullable = true)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "missionQAId")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Team teamId;
+    private MissionQA missionQAId;
 
-    @ManyToOne
-    @JoinColumn(name = "playerId", nullable = true)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Player playerId;
+    private String answered;
+    private String correct;
+
 }

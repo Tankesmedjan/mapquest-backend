@@ -13,7 +13,8 @@ import java.math.BigDecimal;
 public class GameMission {
 
     @Id
-    private String Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "gameId")
