@@ -16,11 +16,14 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long storyId;
     private Long startLat;
     private Long startLong;
     private Long endLat;
     private Long endLong;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "storyId", referencedColumnName = "id")
+    private Story story;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId", referencedColumnName = "id")
