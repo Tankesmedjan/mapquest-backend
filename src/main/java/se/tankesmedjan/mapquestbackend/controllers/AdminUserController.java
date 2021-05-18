@@ -7,6 +7,7 @@ import se.tankesmedjan.mapquestbackend.services.AdminUserService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/admin")
 public class AdminUserController {
