@@ -18,7 +18,4 @@ public class User {
 
     @OneToOne(mappedBy = "user")
     private Game game;
-
-
-
 }
