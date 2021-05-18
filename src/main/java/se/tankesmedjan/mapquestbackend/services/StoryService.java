@@ -20,4 +20,8 @@ public class StoryService {
     public List<Story> getStories() {
         return storyRepo.findAll();
     }
+
+    public Story addStories(Story story) {
+        return storyRepo.save(story);
+    }
 }
