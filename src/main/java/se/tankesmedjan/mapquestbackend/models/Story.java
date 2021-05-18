@@ -25,5 +25,4 @@ public class Story {
 
     @Type(type = "text")
     private String storyText;
-
 }
