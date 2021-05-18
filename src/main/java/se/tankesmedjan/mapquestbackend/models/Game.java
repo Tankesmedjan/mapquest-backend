@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,16 +17,17 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long startLat;
-    private Long startLong;
-    private Long endLat;
-    private Long endLong;
+    private Double startLat;
+    private Double startLong;
+    private Double endLat;
+    private Double endLong;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "storyId", referencedColumnName = "id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Story story;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "userId", referencedColumnName = "id")
     private User user;
 
