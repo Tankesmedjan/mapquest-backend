@@ -24,4 +24,10 @@ public class StoryService {
     public Story addStories(Story story) {
         return storyRepo.save(story);
     }
+
+    public Story deleteStory(Long id) {
+        Story story = storyRepo.findStoryById(id);
+        storyRepo.delete(story);
+        return story;
+    }
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface StoryRepo extends CrudRepository<Story, Long> {
 
     List<Story> findAll();
+    Story findStoryById(Long id);
 }

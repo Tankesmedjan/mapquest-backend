@@ -27,4 +27,9 @@ public class StoryController {
     public Story addStory(@RequestBody Story story){
         return storyService.addStories(story);
     }
+
+    @DeleteMapping("/delete")
+    public String deleteStories(@RequestParam Long id){
+        return "Successfully deleted the story: " + storyService.deleteStory(id).getStoryName();
+    }
 }
