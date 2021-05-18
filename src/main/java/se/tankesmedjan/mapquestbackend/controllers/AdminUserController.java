@@ -6,7 +6,7 @@ import se.tankesmedjan.mapquestbackend.models.AdminUser;
 import se.tankesmedjan.mapquestbackend.services.AdminUserService;
 
 import java.util.List;
-
+@RestController
 @RequestMapping("/api/admin")
 public class AdminUserController {
 
