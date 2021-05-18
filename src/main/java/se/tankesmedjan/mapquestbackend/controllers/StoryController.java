@@ -7,6 +7,7 @@ import se.tankesmedjan.mapquestbackend.services.StoryService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path = "/api/story")
 public class StoryController {

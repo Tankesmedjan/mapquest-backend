@@ -7,6 +7,7 @@ import se.tankesmedjan.mapquestbackend.services.PlayerService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping
 public class PlayerController {

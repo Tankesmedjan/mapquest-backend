@@ -7,6 +7,7 @@ import se.tankesmedjan.mapquestbackend.services.GameService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/game")
 public class GameController {
