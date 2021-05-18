@@ -20,4 +20,8 @@ public class AdminUserService {
     public List<AdminUser> getAdminUsers() {
         return adminUserRepo.findAll();
     }
+
+    public AdminUser addAdminUser(AdminUser adminUser) {
+        return adminUserRepo.save(adminUser);
+    }
 }

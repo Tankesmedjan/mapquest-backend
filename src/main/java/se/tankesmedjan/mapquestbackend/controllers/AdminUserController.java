@@ -1,14 +1,13 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.models.AdminUser;
 import se.tankesmedjan.mapquestbackend.services.AdminUserService;
 
 import java.util.List;
 
-@RequestMapping("/api/adminuser")
+@RequestMapping("/api/admin")
 public class AdminUserController {
 
     private final AdminUserService adminUserService;
@@ -22,5 +21,8 @@ public class AdminUserController {
         return adminUserService.getAdminUsers();
     }
 
-
+    @PostMapping
+    public AdminUser addAdminUser(@RequestBody AdminUser adminUser) {
+        return adminUserService.addAdminUser(adminUser);
+    }
 }
