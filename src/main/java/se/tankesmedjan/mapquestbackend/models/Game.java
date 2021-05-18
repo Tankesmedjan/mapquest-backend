@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -30,12 +29,11 @@ public class Game {
 
     @OneToOne
     @JoinColumn(name = "userId", referencedColumnName = "id")
+    @JsonIgnore
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "game")
     @JsonIgnore
     private List<Team> team;
-
-
 
 }

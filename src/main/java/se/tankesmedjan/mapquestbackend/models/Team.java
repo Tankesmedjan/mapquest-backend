@@ -18,7 +18,7 @@ public class Team {
     private String teamName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "game_id", nullable = false)
+    @JoinColumn(name = "gameId", nullable = true)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Game game;
 }

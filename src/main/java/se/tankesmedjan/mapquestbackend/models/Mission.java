@@ -1,5 +1,6 @@
 package se.tankesmedjan.mapquestbackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Type;
@@ -32,7 +33,8 @@ public class Mission {
     private Long winnerScore;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "defaultStoryId", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "storyId", nullable = true)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Story story;
 
 }

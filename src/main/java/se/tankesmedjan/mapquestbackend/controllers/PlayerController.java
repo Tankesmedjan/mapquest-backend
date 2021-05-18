@@ -9,9 +9,8 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping
+@RequestMapping("/api/player")
 public class PlayerController {
-
 
     private final PlayerService playerService;
 
@@ -19,9 +18,12 @@ public class PlayerController {
     public PlayerController(PlayerService playerService) { this.playerService = playerService; }
 
     @GetMapping
-    public List<Player> getPlayers() { return playerService.getPlayers();}
+    public List<Player> getPlayers() {
+        return playerService.getPlayers();
+    }
 
     @PostMapping
     public Player addPlayer(@RequestBody Player player) {
-        return playerService.addPlayer(player); }
+        return playerService.addPlayer(player);
+    }
 }

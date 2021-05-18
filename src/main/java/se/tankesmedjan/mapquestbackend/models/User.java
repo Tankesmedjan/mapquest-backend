@@ -15,7 +15,4 @@ public class User {
     private Long id;
 
     private String accessCode;
-
-    @OneToOne(mappedBy = "user")
-    private Game game;
 }
