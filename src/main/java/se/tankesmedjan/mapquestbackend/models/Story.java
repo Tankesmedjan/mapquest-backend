@@ -26,8 +26,4 @@ public class Story {
     @Type(type = "text")
     private String storyText;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mission")
-    @JsonIgnore
-    private List<Mission> missionList = new ArrayList<>();
-
 }
