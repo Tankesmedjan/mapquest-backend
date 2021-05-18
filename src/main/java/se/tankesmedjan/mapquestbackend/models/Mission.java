@@ -32,7 +32,7 @@ public class Mission {
     private Long winnerScore;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "defaultStoryId", nullable = false)
+    @JoinColumn(name = "defaultStoryId", referencedColumnName = "id", nullable = false)
     private Story story;
 
 }
