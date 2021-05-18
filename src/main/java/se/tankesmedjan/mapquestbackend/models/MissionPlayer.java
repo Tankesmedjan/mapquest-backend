@@ -13,7 +13,8 @@ import javax.swing.*;
 public class MissionPlayer {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "missionId")
