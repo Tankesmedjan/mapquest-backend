@@ -5,22 +5,26 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Getter
 @Setter
-public class TeamPlayer {
+public class GameMission {
 
     @Id
-    private String id;
+    private String Id;
 
-    @ManyToOne
-    @JoinColumn(name = "teamId", nullable = true)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "gameId")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Team teamId;
+    private Game gameId;
 
-    @ManyToOne
-    @JoinColumn(name = "playerId", nullable = true)
+    private BigDecimal latitude;
+    private BigDecimal longitude;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "missionId")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Player playerId;
+    private Mission missionId;
 }

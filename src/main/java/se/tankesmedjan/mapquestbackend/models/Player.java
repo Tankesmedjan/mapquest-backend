@@ -19,8 +19,8 @@ public class Player {
 
     private String name;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "teamId")
-//    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-//    private Team team;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "teamId")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Team team;
 }
