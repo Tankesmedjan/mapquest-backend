@@ -6,7 +6,7 @@ import se.tankesmedjan.mapquestbackend.services.GameMissionService;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "https://localhost:3000")
 @RestController
 @RequestMapping("/api/gamemission")
 public class GameMissionController {
