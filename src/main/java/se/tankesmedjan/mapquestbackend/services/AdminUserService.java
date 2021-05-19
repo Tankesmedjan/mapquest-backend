@@ -34,4 +34,15 @@ public class AdminUserService {
     public AdminUser addAdminUser(AdminUser adminUser) {
         return adminUserRepo.save(adminUser);
     }
+
+    /**
+     * Basic method for deleting a specific AdminUser.
+     * @param id the ID of the AdminUser to be deleted.
+     * @return deletes the chosen AdminUser.
+     */
+    public AdminUser deleteAdminUser(String id) {
+        AdminUser adminUser = adminUserRepo.findAdminUserById(id);
+        adminUserRepo.delete(adminUser);
+        return adminUser;
+    }
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface AdminUserRepo extends CrudRepository<AdminUser, String> {
 
     List<AdminUser> findAll();
+    AdminUser findAdminUserById(String id);
 }
