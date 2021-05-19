@@ -2,6 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.AdminUserDTO;
+import se.tankesmedjan.mapquestbackend.mappers.AdminUserMapper;
 import se.tankesmedjan.mapquestbackend.models.AdminUser;
 import se.tankesmedjan.mapquestbackend.repositories.AdminUserRepo;
 
@@ -28,11 +30,14 @@ public class AdminUserService {
 
     /**
      * Basic method for adding an AdminUser.
-     * @param adminUser the body of an AdminUser.
+     * @param adminUserDTO the body of an AdminUser.
      * @return saves the AdminUser.
      */
-    public AdminUser addAdminUser(AdminUser adminUser) {
-        return adminUserRepo.save(adminUser);
+    public AdminUserDTO addAdminUser(AdminUserDTO adminUserDTO) {
+
+        AdminUser creatNewAdminUser = AdminUserMapper.INSTANCE.dtoToAdminUser(adminUserDTO);
+        adminUserRepo.save(creatNewAdminUser);
+        return adminUserDTO;
     }
 
     /**

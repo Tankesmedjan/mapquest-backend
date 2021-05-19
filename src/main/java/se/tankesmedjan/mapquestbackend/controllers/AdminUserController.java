@@ -2,13 +2,15 @@ package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.dto.AdminUserDTO;
 import se.tankesmedjan.mapquestbackend.models.AdminUser;
 import se.tankesmedjan.mapquestbackend.services.AdminUserService;
 
 import java.util.List;
 
-@CrossOrigin
+
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/admin")
 public class AdminUserController {
 
@@ -25,8 +27,8 @@ public class AdminUserController {
     }
 
     @PostMapping
-    public AdminUser addAdminUser(@RequestBody AdminUser adminUser) {
-        return adminUserService.addAdminUser(adminUser);
+    public AdminUserDTO addAdminUser(@RequestBody AdminUserDTO adminUserDTO) {
+        return adminUserService.addAdminUser(adminUserDTO);
     }
 
     @DeleteMapping("/delete")
