@@ -17,7 +17,7 @@ public class GameMission {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "gameId")
+    @JoinColumn(name = "gameId", referencedColumnName = "id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Game gameId;
 
@@ -25,7 +25,7 @@ public class GameMission {
     private Double longitude;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "missionId")
+    @JoinColumn(name = "missionId", referencedColumnName = "id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Mission missionId;
 }

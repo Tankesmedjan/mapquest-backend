@@ -34,4 +34,15 @@ public class GameMissionService {
     public List<GameMission> getMissionsPointers(Long id) {
         return gameMissionRepo.findAllPointersByGameId(id);
     }
+
+    /**
+     * Basic method for deleting a specific GameMission.
+     * @param id the ID of the GameMission to be deleted.
+     * @return deletes the chosen GameMission
+     */
+    public GameMission deleteGameMission(Long id) {
+        GameMission gameMission = gameMissionRepo.findGameMissionById(id);
+        gameMissionRepo.delete(gameMission);
+        return gameMission;
+    }
 }

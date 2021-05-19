@@ -13,4 +13,5 @@ public interface GameMissionRepo extends CrudRepository<GameMission, Long> {
             "where gm.gameId.id = ?1 ")
     List<GameMission> findAllPointersByGameId(Long id);
 
+    GameMission findGameMissionById(Long id);
 }

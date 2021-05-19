@@ -19,13 +19,18 @@ public class GameMissionController {
     }
 
     @PostMapping
-    public GameMission addGameMission(GameMission gameMission){
+    public GameMission addGameMission(@RequestBody GameMission gameMission){
         return gameMissionService.addGameMissions(gameMission);
     }
 
     @GetMapping()
     public List<GameMission> getMissionPointers(@RequestParam Long id){
         return gameMissionService.getMissionsPointers(id);
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteGameMission(@RequestParam Long id) {
+        return "Successfully deleted the GameMission by the id of: " + gameMissionService.deleteGameMission(id).getId();
     }
 
 }
