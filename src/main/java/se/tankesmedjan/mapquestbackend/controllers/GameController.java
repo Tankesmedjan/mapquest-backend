@@ -29,4 +29,8 @@ public class GameController {
         return gameService.addGame(game);
     }
 
+    @DeleteMapping("/delete")
+    public String deleteGame(@RequestParam Long id) {
+        return "Successfully deleted the game by the id of: " + gameService.deleteGame(id).getId();
+    }
 }

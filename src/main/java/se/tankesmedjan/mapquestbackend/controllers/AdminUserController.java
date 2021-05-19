@@ -28,4 +28,9 @@ public class AdminUserController {
     public AdminUser addAdminUser(@RequestBody AdminUser adminUser) {
         return adminUserService.addAdminUser(adminUser);
     }
+
+    @DeleteMapping("/delete")
+    public String deleteAdminUser(@RequestParam String id) {
+        return "Successfully deleted the AdminUser: " + adminUserService.deleteAdminUser(id).getUsername();
+    }
 }
