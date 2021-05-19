@@ -17,10 +17,18 @@ public class PlayerService {
         this.playerRepo = playerRepo;
     }
 
+    /**
+     * Basic method for getting a list of all Players.
+     * @return the list of all Players.
+     */
     public List<Player> getPlayers() { return playerRepo.findAll(); }
 
+    /**
+     * Basic method for adding a Player.
+     * @param player the body of a Player.
+     * @return saves the Player.
+     */
     public Player addPlayer(Player player){
         return playerRepo.save(player);
-
     }
 }
