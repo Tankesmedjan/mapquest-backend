@@ -37,7 +37,7 @@ public class MissionService {
     /**
      * Basic method for deleting a specific mission.
      * @param id the ID of the Mission to be deleted.
-     * @return the Mission to be deleted.
+     * @return deletes the chosen Mission.
      */
     public Mission deleteMission(Long id) {
         Mission mission = missionRepo.findMissionById(id);

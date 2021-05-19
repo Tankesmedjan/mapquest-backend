@@ -17,14 +17,28 @@ public class StoryService {
         this.storyRepo = storyRepo;
     }
 
+    /**
+     * Basic method for getting a list of all Stories.
+     * @return the list of all Stories.
+     */
     public List<Story> getStories() {
         return storyRepo.findAll();
     }
 
+    /**
+     * Basic method for adding a Story.
+     * @param story the body of a Story.
+     * @return saves the Story.
+     */
     public Story addStories(Story story) {
         return storyRepo.save(story);
     }
 
+    /**
+     * Basic method for deleting a specific Story.
+     * @param id the ID of the Story to be deleted.
+     * @return deletes the chosen Story.
+     */
     public Story deleteStory(Long id) {
         Story story = storyRepo.findStoryById(id);
         storyRepo.delete(story);
