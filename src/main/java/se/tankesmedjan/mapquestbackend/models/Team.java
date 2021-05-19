@@ -1,10 +1,12 @@
 package se.tankesmedjan.mapquestbackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,4 +23,9 @@ public class Team {
     @JoinColumn(name = "gameId", nullable = true)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Game game;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "team")
+    @JsonIgnore
+    private List<Player> playerList;
+
 }
