@@ -1,11 +1,13 @@
 package se.tankesmedjan.mapquestbackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,7 +26,7 @@ public class Mission {
     private String missionDescription;
 
     @Column(columnDefinition = "boolean default false")
-    private boolean isQuestion;
+    private boolean izQuestion;
 
     @Column(length = 128)
     private String shortDescription;
