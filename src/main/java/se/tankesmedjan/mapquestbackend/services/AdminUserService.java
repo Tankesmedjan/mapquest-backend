@@ -17,11 +17,10 @@ public class AdminUserService {
         this.adminUserRepo = adminUserRepo;
     }
 
-
     /**
      * Basic method for getting a list of all AdminUsers.
      *
-     * @return the list of AdminUsers.
+     * @return the list of all AdminUsers.
      */
     public List<AdminUser> getAdminUsers() {
         return adminUserRepo.findAll();

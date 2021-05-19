@@ -17,10 +17,19 @@ public class GameMissionService {
         this.gameMissionRepo = gameMissionRepo;
     }
 
+    /**
+     * Basic method for adding a GameMission.
+     * @param gameMission the body of a GameMission.
+     * @return saves the GameMission.
+     */
     public GameMission addGameMissions(GameMission gameMission) {
         return gameMissionRepo.save(gameMission);
     }
 
+    /**
+     * Basic method for getting a list of all GameMissions.
+     * @return the list of all GameMissions.
+     */
     public List<GameMission> getMissions() {
         return gameMissionRepo.findAll();
     }
