@@ -17,10 +17,20 @@ public class GameService {
         this.gameRepo = gameRepo;
     }
 
+    /**
+     * Basic method for getting a list of all Games.
+     *
+     * @return the list of all Games.
+     */
     public List<Game> getGames() {
         return gameRepo.findAll();
     }
 
+    /**
+     * Basic method for adding a Game.
+     * @param game the body of an Game.
+     * @return saves the Game.
+     */
     public Game addGame(Game game) {
         return gameRepo.save(game);
     }
