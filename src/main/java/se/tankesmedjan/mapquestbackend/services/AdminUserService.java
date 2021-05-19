@@ -17,10 +17,21 @@ public class AdminUserService {
         this.adminUserRepo = adminUserRepo;
     }
 
+
+    /**
+     * Basic method for getting a list of all AdminUsers.
+     *
+     * @return the list of AdminUsers.
+     */
     public List<AdminUser> getAdminUsers() {
         return adminUserRepo.findAll();
     }
 
+    /**
+     * Basic method for adding an AdminUser.
+     * @param adminUser the body of an AdminUser.
+     * @return saves the AdminUser.
+     */
     public AdminUser addAdminUser(AdminUser adminUser) {
         return adminUserRepo.save(adminUser);
     }
