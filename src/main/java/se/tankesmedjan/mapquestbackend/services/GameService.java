@@ -34,4 +34,15 @@ public class GameService {
     public Game addGame(Game game) {
         return gameRepo.save(game);
     }
+
+    /**
+     * Basic method for deleting a specific Game.
+     * @param id the ID of the Game to be deleted.
+     * @return deletes the chosen Game.
+     */
+    public Game deleteGame(Long id) {
+        Game game = gameRepo.findGameById(id);
+        gameRepo.delete(game);
+        return game;
+    }
 }
