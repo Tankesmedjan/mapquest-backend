@@ -22,9 +22,9 @@ public class GameMissionController {
         return gameMissionService.addGameMissions(gameMission);
     }
 
-    @GetMapping
-    public List<GameMission> getMission(){
-        return gameMissionService.getMissions();
+    @GetMapping()
+    public List<GameMission> getMissionPointers(@RequestParam Long id){
+        return gameMissionService.getMissionsPointers(id);
     }
 
 }

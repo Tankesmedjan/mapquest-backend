@@ -1,11 +1,18 @@
 package se.tankesmedjan.mapquestbackend.repositories;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import se.tankesmedjan.mapquestbackend.models.GameMission;
+import se.tankesmedjan.mapquestbackend.models.Mission;
 
 import java.util.List;
 
 public interface GameMissionRepo extends CrudRepository<GameMission, Long> {
 
-    List<GameMission> findAll();
+
+    @Query("SELECT gm FROM GameMission gm " +
+            "inner join Mission m on m.id = gm.missionId.id " +
+            "where gm.gameId.id = ?1 ")
+    List<GameMission> findAllPointersByGameId(Long id);
+
 }
