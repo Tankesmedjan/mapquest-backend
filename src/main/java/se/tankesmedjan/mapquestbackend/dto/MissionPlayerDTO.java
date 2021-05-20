@@ -3,9 +3,6 @@ package se.tankesmedjan.mapquestbackend.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Time;
-
-
 @Getter
 @Setter
 public class MissionPlayerDTO {

@@ -29,4 +29,9 @@ public class MissionPlayerController {
     public List<MissionPlayer> getMissionPlayer(){
         return missionPlayerService.getMissionPlayer();
     }
+
+    @DeleteMapping("/delete")
+    public String deleteMissionPlayer(@RequestParam Long id){
+        return "Successfully deleted MissionPlayer with time: " + missionPlayerService.deletePlayer(id).getTimer().toString();
+    }
 }

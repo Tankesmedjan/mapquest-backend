@@ -33,6 +33,6 @@ public class MissionController {
 
     @DeleteMapping("/delete")
     public String deleteMissions(@RequestParam Long id){
-        return "Successfully deleted: " + missionService.deleteMission(id);
+        return "Successfully deleted: " + missionService.deleteMission(id).getMissionName();
     }
 }

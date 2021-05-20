@@ -20,6 +20,12 @@ public class MissionPlayerService {
         this.missionPlayerRepo = missionPlayerRepo;
     }
 
+    public MissionPlayer deletePlayer(Long id) {
+        MissionPlayer missionPlayer = missionPlayerRepo.findMissionPlayerById(id);
+        missionPlayerRepo.delete(missionPlayer);
+        return missionPlayer;
+    }
+
     public MissionPlayerDTO addMissionPlayer(MissionPlayerDTO missionPlayerDTO) {
 
         missionPlayerRepo.save(MissionPlayerMapper.INSTANCE.dtoToMissionPlayer(missionPlayerDTO));

@@ -8,4 +8,5 @@ import java.util.List;
 public interface MissionPlayerRepo extends CrudRepository<MissionPlayer, Long> {
 
     List<MissionPlayer> findAll();
+    MissionPlayer findMissionPlayerById(Long id);
 }
