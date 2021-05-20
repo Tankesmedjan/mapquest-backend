@@ -21,8 +21,8 @@ public class GameMission {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Game gameId;
 
-    private Double latitude;
-    private Double longitude;
+    private double latitude;
+    private double longitude;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "missionId", referencedColumnName = "id")

@@ -2,6 +2,9 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.GameMissionDTO;
+
+import se.tankesmedjan.mapquestbackend.mappers.GameMissionMapper;
 import se.tankesmedjan.mapquestbackend.models.GameMission;
 import se.tankesmedjan.mapquestbackend.models.Mission;
 import se.tankesmedjan.mapquestbackend.repositories.GameMissionRepo;
@@ -20,11 +23,15 @@ public class GameMissionService {
 
     /**
      * Basic method for adding a GameMission.
-     * @param gameMission the body of a GameMission.
+     * @param gameMissionDTO the body of a GameMission.
      * @return saves the GameMission.
      */
-    public GameMission addGameMissions(GameMission gameMission) {
-        return gameMissionRepo.save(gameMission);
+    public GameMissionDTO addGameMissions(GameMissionDTO gameMissionDTO) {
+
+        GameMission createNewGameMission = GameMissionMapper.INSTANCE.dtoToGameMission(gameMissionDTO);
+        gameMissionRepo.save(createNewGameMission);
+
+        return gameMissionDTO;
     }
 
     /**

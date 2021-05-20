@@ -2,6 +2,7 @@ package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.dto.GameMissionDTO;
 import se.tankesmedjan.mapquestbackend.models.GameMission;
 import se.tankesmedjan.mapquestbackend.services.GameMissionService;
 
@@ -20,8 +21,8 @@ public class GameMissionController {
     }
 
     @PostMapping
-    public GameMission addGameMission(@RequestBody GameMission gameMission){
-        return gameMissionService.addGameMissions(gameMission);
+    public GameMissionDTO addGameMission(@RequestBody GameMissionDTO gameMissionDTO){
+        return gameMissionService.addGameMissions(gameMissionDTO);
     }
 
     @GetMapping()
