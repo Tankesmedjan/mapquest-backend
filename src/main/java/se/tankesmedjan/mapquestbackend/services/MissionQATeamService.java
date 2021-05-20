@@ -2,6 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.MissionQATeamDTO;
+import se.tankesmedjan.mapquestbackend.mappers.MissionQATeamMapper;
 import se.tankesmedjan.mapquestbackend.models.MissionQATeam;
 import se.tankesmedjan.mapquestbackend.repositories.MissionQATeamRepo;
 
@@ -17,8 +19,9 @@ public class MissionQATeamService {
         this.missionQATeamRepo = missionQATeamRepo;
     }
 
-    public MissionQATeam addMissionQATeam(MissionQATeam missionQATeam) {
-        return missionQATeamRepo.save(missionQATeam);
+    public MissionQATeamDTO addMissionQATeam(MissionQATeamDTO missionQATeam) {
+        missionQATeamRepo.save(MissionQATeamMapper.INSTANCE.dtoToMissionQATeam(missionQATeam));
+        return missionQATeam;
     }
 
     public List<MissionQATeam> getMissionQATeam() {

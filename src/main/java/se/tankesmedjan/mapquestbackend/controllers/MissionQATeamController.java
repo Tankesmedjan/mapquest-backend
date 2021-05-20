@@ -2,6 +2,7 @@ package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.dto.MissionQATeamDTO;
 import se.tankesmedjan.mapquestbackend.models.MissionQATeam;
 import se.tankesmedjan.mapquestbackend.services.MissionQATeamService;
 
@@ -20,7 +21,7 @@ public class MissionQATeamController {
     }
 
     @PostMapping
-    public MissionQATeam addMissionQATeam(@RequestBody MissionQATeam missionQATeam){
+    public MissionQATeamDTO addMissionQATeam(@RequestBody MissionQATeamDTO missionQATeam){
         return missionQATeamService.addMissionQATeam(missionQATeam);
     }
 
