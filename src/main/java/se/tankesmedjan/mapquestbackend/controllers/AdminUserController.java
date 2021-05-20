@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.AdminUserDTO;
 import se.tankesmedjan.mapquestbackend.models.AdminUser;
+import se.tankesmedjan.mapquestbackend.models.Story;
 import se.tankesmedjan.mapquestbackend.services.AdminUserService;
+import se.tankesmedjan.mapquestbackend.services.StoryService;
 
 import java.util.List;
 
@@ -15,15 +17,22 @@ import java.util.List;
 public class AdminUserController {
 
     private final AdminUserService adminUserService;
+    private final StoryService storyService;
 
     @Autowired
-    public AdminUserController(AdminUserService adminUserService) {
+    public AdminUserController(AdminUserService adminUserService, StoryService storyService) {
         this.adminUserService = adminUserService;
+        this.storyService = storyService;
     }
 
     @GetMapping
     public List<AdminUser> getAdminUsers() {
         return adminUserService.getAdminUsers();
+    }
+
+    @GetMapping("/story")
+    public List<Story> getAllStories(){
+        return storyService.getStories();
     }
 
     @PostMapping
