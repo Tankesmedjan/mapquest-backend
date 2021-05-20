@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.MissionQATeamDTO;
 import se.tankesmedjan.mapquestbackend.mappers.MissionQATeamMapper;
 import se.tankesmedjan.mapquestbackend.models.MissionQATeam;
+import se.tankesmedjan.mapquestbackend.models.Player;
 import se.tankesmedjan.mapquestbackend.repositories.MissionQATeamRepo;
 
 import java.util.List;
@@ -27,4 +28,11 @@ public class MissionQATeamService {
     public List<MissionQATeam> getMissionQATeam() {
         return missionQATeamRepo.findAll();
     }
+
+    public MissionQATeam deleteMissionQATeam(String id) {
+        MissionQATeam missionQATeam = missionQATeamRepo.findMissionQATeamById(id);
+        missionQATeamRepo.delete(missionQATeam);
+        return missionQATeam;
+    }
 }
+
