@@ -3,6 +3,7 @@ package se.tankesmedjan.mapquestbackend.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.AdminUserDTO;
+import se.tankesmedjan.mapquestbackend.dto.MissionDTO;
 import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
 import se.tankesmedjan.mapquestbackend.models.AdminUser;
 import se.tankesmedjan.mapquestbackend.models.Mission;
@@ -53,6 +54,11 @@ public class AdminUserController {
     @PostMapping("/story")
     public StoryDTO addStory(@RequestBody StoryDTO storyDTO){
         return storyService.addStories(storyDTO);
+    }
+
+    @PostMapping("/mission")
+    public MissionDTO addMission(@RequestBody MissionDTO missionDTO){
+        return missionService.addMissions(missionDTO);
     }
 
     @DeleteMapping("/story/delete")
