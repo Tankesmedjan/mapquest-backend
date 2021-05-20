@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.AdminUserDTO;
 import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
 import se.tankesmedjan.mapquestbackend.models.AdminUser;
+import se.tankesmedjan.mapquestbackend.models.Mission;
 import se.tankesmedjan.mapquestbackend.models.Story;
 import se.tankesmedjan.mapquestbackend.services.AdminUserService;
+import se.tankesmedjan.mapquestbackend.services.MissionService;
 import se.tankesmedjan.mapquestbackend.services.StoryService;
 
 import java.util.List;
@@ -19,11 +21,13 @@ public class AdminUserController {
 
     private final AdminUserService adminUserService;
     private final StoryService storyService;
+    private final MissionService missionService;
 
     @Autowired
-    public AdminUserController(AdminUserService adminUserService, StoryService storyService) {
+    public AdminUserController(AdminUserService adminUserService, StoryService storyService, MissionService missionService) {
         this.adminUserService = adminUserService;
         this.storyService = storyService;
+        this.missionService = missionService;
     }
 
     @GetMapping
@@ -36,6 +40,11 @@ public class AdminUserController {
         return storyService.getStories();
     }
 
+    @GetMapping("/mission")
+    public List<Mission> getAllMissions(){
+        return missionService.getAllMissions();
+    }
+
     @PostMapping
     public AdminUserDTO addAdminUser(@RequestBody AdminUserDTO adminUserDTO) {
         return adminUserService.addAdminUser(adminUserDTO);
@@ -44,6 +53,11 @@ public class AdminUserController {
     @PostMapping("/story")
     public StoryDTO addStory(@RequestBody StoryDTO storyDTO){
         return storyService.addStories(storyDTO);
+    }
+
+    @DeleteMapping("/story/delete")
+    public String deleteStory(@RequestParam Long id){
+        return "Successfully deleted the story of: " + storyService.deleteStory(id).getStoryName();
     }
 
     @DeleteMapping("/delete")
