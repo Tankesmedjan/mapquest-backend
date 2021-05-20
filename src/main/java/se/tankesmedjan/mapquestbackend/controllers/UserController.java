@@ -1,11 +1,10 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.services.UserService;
+
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -21,5 +20,10 @@ public class UserController {
     @PostMapping
     public User addAccessCode(User user){
         return userService.addAccessCode(user);
+    }
+
+    @GetMapping
+    public List<User> getUsers() {
+        return userService.getUsers();
     }
 }

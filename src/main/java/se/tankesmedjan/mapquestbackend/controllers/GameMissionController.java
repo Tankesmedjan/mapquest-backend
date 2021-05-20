@@ -1,6 +1,5 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.models.GameMission;
 import se.tankesmedjan.mapquestbackend.services.GameMissionService;
