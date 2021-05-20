@@ -1,12 +1,11 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.models.MissionPlayer;
 import se.tankesmedjan.mapquestbackend.services.MissionPlayerService;
-import se.tankesmedjan.mapquestbackend.services.MissionQAService;
+
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -15,7 +14,18 @@ public class MissionPlayerController {
 
     private final MissionPlayerService missionPlayerService;
 
+    @Autowired
     public MissionPlayerController(MissionPlayerService missionPlayerService){
         this.missionPlayerService = missionPlayerService;
+    }
+
+    @PostMapping
+    public MissionPlayer addMissionPlayer(MissionPlayer missionPlayer){
+        return missionPlayerService.addMissionPlayer(missionPlayer);
+    }
+
+    @GetMapping
+    public List<MissionPlayer> getMissionPlayer(){
+        return missionPlayerService.getMissionPlayer();
     }
 }

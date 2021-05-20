@@ -1,11 +1,31 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.models.MissionQATeam;
+import se.tankesmedjan.mapquestbackend.services.MissionQATeamService;
+
+import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping
+@RequestMapping("/api/missionqateam")
 public class MissionQATeamController {
+
+    private final MissionQATeamService missionQATeamService;
+
+    @Autowired
+    public MissionQATeamController(MissionQATeamService missionQATeamService){
+        this.missionQATeamService = missionQATeamService;
+    }
+
+    @PostMapping
+    public MissionQATeam addMissionQATeam(MissionQATeam missionQATeam){
+        return missionQATeamService.addMissionQATeam(missionQATeam);
+    }
+
+    @GetMapping
+    public List<MissionQATeam> getMissionQATeam(){
+        return missionQATeamService.getMissionQATeam();
+    }
 }
