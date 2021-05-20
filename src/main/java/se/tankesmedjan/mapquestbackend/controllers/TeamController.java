@@ -33,7 +33,7 @@ public class TeamController {
 
     @DeleteMapping("/delete")
     public String deleteTeam(@RequestParam Long id){
-        return "Successfully deleted team: " + teamService.deleteTeam(id);
+        return "Successfully deleted team: " + teamService.deleteTeam(id).getTeamName();
     }
 
 }
