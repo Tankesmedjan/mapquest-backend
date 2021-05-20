@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.swing.*;
+import java.sql.Time;
 
 @Entity
 @Getter
@@ -30,5 +31,5 @@ public class MissionPlayer {
      * Ifall det skiter sig, gör om time till int och lägg en timer i
      * frontend som sparar värdet och lagrar som en int i time.
      */
-    private Timer time;
+    private Time time;
 }
