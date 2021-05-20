@@ -2,6 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.TeamDTO;
+import se.tankesmedjan.mapquestbackend.mappers.TeamMapper;
 import se.tankesmedjan.mapquestbackend.models.Team;
 import se.tankesmedjan.mapquestbackend.repositories.TeamRepo;
 
@@ -22,8 +24,9 @@ public class TeamService {
      * @param team the body of a Team.
      * @return saves the Team.
      */
-    public Team addTeams(Team team) {
-        return teamRepo.save(team);
+    public TeamDTO addTeams(TeamDTO team) {
+        teamRepo.save(TeamMapper.INSTANCE.dtoToTeam(team));
+        return team;
     }
 
     /**
