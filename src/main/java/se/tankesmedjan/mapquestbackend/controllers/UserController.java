@@ -2,6 +2,7 @@ package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.dto.UserDTO;
 import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.services.UserService;
 
@@ -20,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping
-    public User addAccessCode(User user){
+    public UserDTO addAccessCode(UserDTO user){
         return userService.addAccessCode(user);
     }
 

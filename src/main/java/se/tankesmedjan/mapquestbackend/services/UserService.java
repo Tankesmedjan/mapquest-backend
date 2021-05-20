@@ -2,6 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.UserDTO;
+import se.tankesmedjan.mapquestbackend.mappers.UserMapper;
 import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.repositories.UserRepo;
 
@@ -17,8 +19,14 @@ public class UserService {
         this.userRepo = userRepo;
     }
 
-    public User addAccessCode(User user) {
-        return userRepo.save(user);
+    /**
+     * Basic method to store an Acesscode in the database.
+     * @return the code you added.
+     */
+    public UserDTO addAccessCode(UserDTO user) {
+        User addUser = UserMapper.INSTANCE.dtoToUser(user);
+        userRepo.save(addUser);
+        return user;
     }
 
     /**
