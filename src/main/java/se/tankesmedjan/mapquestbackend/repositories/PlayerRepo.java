@@ -8,4 +8,6 @@ import java.util.List;
 public interface PlayerRepo extends CrudRepository<Player, Long> {
 
     List<Player> findAll();
+
+    Player findPlayerById(String id);
 }

@@ -27,4 +27,9 @@ public class PlayerController {
     public PlayerDTO addPlayer(@RequestBody PlayerDTO player) {
         return playerService.addPlayer(player);
     }
+
+    @DeleteMapping("/delete")
+    public String deleteUser(@RequestParam String id) {
+        return "Successfully deleted the player: " + playerService.deletePlayer(id).getName();
+    }
 }
