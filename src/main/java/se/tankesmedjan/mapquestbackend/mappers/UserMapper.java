@@ -11,6 +11,7 @@ public interface UserMapper {
 
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-    @Mapping(source = "accessCode", target = "accessCode")
+    @Mapping(source = "name", target = "name")
+    @Mapping(source = "email", target = "email")
     User dtoToUser (UserDTO userDTO);
 }

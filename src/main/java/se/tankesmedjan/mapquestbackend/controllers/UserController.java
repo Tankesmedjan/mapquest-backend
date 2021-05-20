@@ -21,8 +21,8 @@ public class UserController {
     }
 
     @PostMapping
-    public UserDTO addAccessCode(UserDTO user){
-        return userService.addAccessCode(user);
+    public UserDTO addUser(UserDTO user){
+        return userService.addUser(user);
     }
 
     @GetMapping

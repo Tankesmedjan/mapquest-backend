@@ -20,10 +20,11 @@ public class UserService {
     }
 
     /**
-     * Basic method to store an Acesscode in the database.
-     * @return the code you added.
+     * Basic method for adding a User.
+     * @param user the body of the User to be added.
+     * @return saves the User.
      */
-    public UserDTO addAccessCode(UserDTO user) {
+    public UserDTO addUser(UserDTO user) {
         User addUser = UserMapper.INSTANCE.dtoToUser(user);
         userRepo.save(addUser);
         return user;

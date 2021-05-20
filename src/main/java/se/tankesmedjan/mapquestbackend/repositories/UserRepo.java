@@ -5,7 +5,7 @@ import se.tankesmedjan.mapquestbackend.models.User;
 
 import java.util.List;
 
-public interface UserRepo extends CrudRepository<User, Long> {
+public interface UserRepo extends CrudRepository<User, String> {
 
     List<User> findAll();
 }
