@@ -2,6 +2,7 @@ package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.dto.PlayerDTO;
 import se.tankesmedjan.mapquestbackend.models.Player;
 import se.tankesmedjan.mapquestbackend.services.PlayerService;
 
@@ -23,7 +24,7 @@ public class PlayerController {
     }
 
     @PostMapping
-    public Player addPlayer(@RequestBody Player player) {
+    public PlayerDTO addPlayer(@RequestBody PlayerDTO player) {
         return playerService.addPlayer(player);
     }
 }

@@ -20,7 +20,7 @@ public class MissionPlayerController {
     }
 
     @PostMapping
-    public MissionPlayer addMissionPlayer(MissionPlayer missionPlayer){
+    public MissionPlayer addMissionPlayer(@RequestBody MissionPlayer missionPlayer){
         return missionPlayerService.addMissionPlayer(missionPlayer);
     }
 

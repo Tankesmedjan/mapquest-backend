@@ -20,7 +20,7 @@ public class MissionQAController {
     }
 
     @PostMapping
-    public MissionQA addQuestion(MissionQA missionQA){
+    public MissionQA addQuestion(@RequestBody MissionQA missionQA){
         return missionQAService.addQuestion(missionQA);
     }
 

@@ -14,7 +14,7 @@ public class User {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    private String idAccessCode;
+    private String id;
 
     private String name;
     private String email;

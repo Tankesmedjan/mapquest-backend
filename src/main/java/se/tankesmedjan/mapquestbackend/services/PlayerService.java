@@ -2,6 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.PlayerDTO;
+import se.tankesmedjan.mapquestbackend.mappers.PlayerMapper;
 import se.tankesmedjan.mapquestbackend.models.Player;
 import se.tankesmedjan.mapquestbackend.repositories.PlayerRepo;
 
@@ -28,7 +30,8 @@ public class PlayerService {
      * @param player the body of a Player.
      * @return saves the Player.
      */
-    public Player addPlayer(Player player){
-        return playerRepo.save(player);
+    public PlayerDTO addPlayer(PlayerDTO player){
+        playerRepo.save(PlayerMapper.INSTANCE.dtoToPlayer(player));
+        return player;
     }
 }

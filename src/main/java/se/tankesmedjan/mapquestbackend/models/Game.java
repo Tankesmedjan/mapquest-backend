@@ -28,7 +28,7 @@ public class Game {
     private Story story;
 
     @OneToOne
-    @JoinColumn(name = "userId", referencedColumnName = "idAccessCode")
+    @JoinColumn(name = "userId", referencedColumnName = "id")
     @JsonIgnore
     private User user;
 

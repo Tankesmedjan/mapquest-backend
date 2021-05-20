@@ -20,7 +20,7 @@ public class MissionQATeamController {
     }
 
     @PostMapping
-    public MissionQATeam addMissionQATeam(MissionQATeam missionQATeam){
+    public MissionQATeam addMissionQATeam(@RequestBody MissionQATeam missionQATeam){
         return missionQATeamService.addMissionQATeam(missionQATeam);
     }
 
