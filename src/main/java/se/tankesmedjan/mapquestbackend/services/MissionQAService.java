@@ -32,4 +32,10 @@ public class MissionQAService {
     public List<MissionQA> getQuestion(Long id) {
         return missionQARepo.findAllById(id);
     }
+
+    public MissionQA deleteMission(Long id) {
+        MissionQA missionQA = missionQARepo.findMissionQAById(id);
+        missionQARepo.delete(missionQA);
+        return missionQA;
+    }
 }

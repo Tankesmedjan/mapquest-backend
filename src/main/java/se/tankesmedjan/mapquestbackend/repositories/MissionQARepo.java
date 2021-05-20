@@ -10,4 +10,6 @@ public interface MissionQARepo extends CrudRepository<MissionQA, Long> {
 
     List<MissionQA> findAll();
     List<MissionQA> findAllById(Long id);
+
+    MissionQA findMissionQAById(Long id);
 }

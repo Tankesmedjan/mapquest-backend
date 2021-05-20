@@ -34,4 +34,9 @@ public class MissionQAController {
     public List<MissionQA> getQuestion(@RequestParam Long id){
         return missionQAService.getQuestion(id);
     }
+
+    @DeleteMapping("/delete")
+    public String deleteMissionQA(@RequestParam Long id){
+         return "successfully deleted missionQA: " + missionQAService.deleteMission(id).getMissionId().getMissionName();
+    }
 }
