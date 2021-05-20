@@ -2,6 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.GameDTO;
+import se.tankesmedjan.mapquestbackend.mappers.GameMapper;
 import se.tankesmedjan.mapquestbackend.models.Game;
 import se.tankesmedjan.mapquestbackend.repositories.GameRepo;
 
@@ -28,11 +30,14 @@ public class GameService {
 
     /**
      * Basic method for adding a Game.
-     * @param game the body of an Game.
+     * @param gameDTO the body of an Game.
      * @return saves the Game.
      */
-    public Game addGame(Game game) {
-        return gameRepo.save(game);
+    public GameDTO addGame(GameDTO gameDTO) {
+        Game game = GameMapper.INSTANCE.dtoToGame(gameDTO);
+
+        gameRepo.save(game);
+        return gameDTO;
     }
 
     /**
