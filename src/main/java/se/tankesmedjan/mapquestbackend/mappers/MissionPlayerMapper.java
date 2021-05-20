@@ -12,7 +12,7 @@ public interface MissionPlayerMapper {
 
     MissionPlayerMapper INSTANCE = Mappers.getMapper(MissionPlayerMapper.class);
 
-    @Mapping(source = "time", target = "time")
+    @Mapping(source = "timer", target = "timer")
     @Mapping(source = "missionId", target = "missionId.id")
     @Mapping(source = "playerId", target = "playerId.id")
     MissionPlayer dtoToMissionPlayer(MissionPlayerDTO missionPlayerDTO);

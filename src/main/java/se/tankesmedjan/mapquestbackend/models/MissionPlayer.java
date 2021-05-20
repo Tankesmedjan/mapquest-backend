@@ -31,5 +31,5 @@ public class MissionPlayer {
      * Ifall det skiter sig, gör om time till int och lägg en timer i
      * frontend som sparar värdet och lagrar som en int i time.
      */
-    private Time time;
+    private Long timer;
 }
