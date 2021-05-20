@@ -3,6 +3,7 @@ package se.tankesmedjan.mapquestbackend.controllers;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.dto.TeamDTO;
 import se.tankesmedjan.mapquestbackend.models.Team;
 import se.tankesmedjan.mapquestbackend.services.TeamService;
 
@@ -21,7 +22,7 @@ public class TeamController {
     }
 
     @PostMapping
-    public Team addTeam(@RequestBody Team team){
+    public TeamDTO addTeam(@RequestBody TeamDTO team){
         return teamService.addTeams(team);
     }
 
