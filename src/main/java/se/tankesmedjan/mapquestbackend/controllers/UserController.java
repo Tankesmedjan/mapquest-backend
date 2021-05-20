@@ -29,4 +29,9 @@ public class UserController {
     public List<User> getUsers() {
         return userService.getUsers();
     }
+
+    @DeleteMapping("/delete")
+    public String deleteUser(@RequestParam String id) {
+        return "Successfully deleted the User: " + userService.deleteUser(id).getName();
+    }
 }
