@@ -2,6 +2,7 @@ package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
 import se.tankesmedjan.mapquestbackend.models.Story;
 import se.tankesmedjan.mapquestbackend.services.StoryService;
 
@@ -25,7 +26,7 @@ public class StoryController {
     }
 
     @PostMapping
-    public Story addStory(@RequestBody Story story){
+    public StoryDTO addStory(@RequestBody StoryDTO story){
         return storyService.addStories(story);
     }
 

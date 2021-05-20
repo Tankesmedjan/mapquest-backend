@@ -2,6 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
+import se.tankesmedjan.mapquestbackend.mappers.StoryMapper;
 import se.tankesmedjan.mapquestbackend.models.Story;
 import se.tankesmedjan.mapquestbackend.repositories.StoryRepo;
 
@@ -30,8 +32,9 @@ public class StoryService {
      * @param story the body of a Story.
      * @return saves the Story.
      */
-    public Story addStories(Story story) {
-        return storyRepo.save(story);
+    public StoryDTO addStories(StoryDTO story) {
+        storyRepo.save(StoryMapper.INSTANCE.dtoToStory(story));
+        return story;
     }
 
     /**
