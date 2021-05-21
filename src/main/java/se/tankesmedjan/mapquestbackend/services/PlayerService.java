@@ -36,6 +36,11 @@ public class PlayerService {
         return player;
     }
 
+    /**
+     * Basic method for deleting a Player.
+     * @param id the id of the Player to be deleted.
+     * @return deletes the chosen Player.
+     */
     public Player deletePlayer(String id) {
         Player player = playerRepo.findPlayerById(id);
         playerRepo.delete(player);

@@ -28,6 +28,9 @@ public class MissionService {
      * Basic method for adding a Mission.
      * @param missionDTO the body of a Mission.
      * @return saves the Mission.
+     *
+     * If the mission contains a question, it gets saved to
+     * missionQA as well.
      */
     public MissionDTO addMissions(MissionDTO missionDTO) {
         Mission mission = MissionMapper.INSTANCE.dtoToMission(missionDTO);
@@ -66,7 +69,6 @@ public class MissionService {
     }
 
     /**
-     *
      * @param id is the id of the question you want to edit.
      * @param missionDTO contains the information you want to change to.
      *

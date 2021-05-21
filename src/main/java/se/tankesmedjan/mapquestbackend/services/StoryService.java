@@ -48,6 +48,12 @@ public class StoryService {
         return story;
     }
 
+    /**
+     * Basic method to edit a Story.
+     * @param id the id of the Story to be edited.
+     * @param storyDTO the body of the Story.
+     * @return saves the changes to Story.
+     */
     public StoryDTO editStory(Long id, StoryDTO storyDTO) {
         Story storyToEdit = storyRepo.findStoryById(id);
         if (storyDTO.getStoryName() != null) {
