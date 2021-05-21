@@ -6,6 +6,13 @@ import org.mapstruct.factory.Mappers;
 import se.tankesmedjan.mapquestbackend.dto.GameDTO;
 import se.tankesmedjan.mapquestbackend.models.Game;
 
+/**
+ * Mapper with MapStruct
+ * https://mapstruct.org/documentation/reference-guide/
+ *
+ * Maps the dto:information to entities
+ */
+
 @Mapper
 public interface GameMapper {
 
