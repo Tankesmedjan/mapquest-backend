@@ -28,6 +28,10 @@ public class AdminUserService {
         return adminUserRepo.findAll();
     }
 
+    public Boolean checkAuth(AdminUserDTO adminUserDTO){
+        return !adminUserRepo.findAdminUserByUsernameAndPassword(adminUserDTO.getUsername(), adminUserDTO.getPassword()).isEmpty();
+    }
+
     /**
      * Basic method for adding an AdminUser.
      * @param adminUserDTO the body of an AdminUser.

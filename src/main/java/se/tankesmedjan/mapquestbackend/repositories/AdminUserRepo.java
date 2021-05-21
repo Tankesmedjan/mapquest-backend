@@ -9,4 +9,5 @@ public interface AdminUserRepo extends CrudRepository<AdminUser, String> {
 
     List<AdminUser> findAll();
     AdminUser findAdminUserById(String id);
+    List<AdminUser> findAdminUserByUsernameAndPassword(String username, String password);
 }
