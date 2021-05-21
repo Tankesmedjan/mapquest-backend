@@ -31,6 +31,11 @@ public class MissionController {
         return missionService.getAllMissions();
     }
 
+    @PutMapping("/edit")
+    public MissionDTO editMission(@RequestParam Long id, @RequestBody MissionDTO missionDTO){
+        return missionService.editMission(id, missionDTO);
+    }
+
     @DeleteMapping("/delete")
     public String deleteMissions(@RequestParam Long id){
         return "Successfully deleted: " + missionService.deleteMission(id).getMissionName();
