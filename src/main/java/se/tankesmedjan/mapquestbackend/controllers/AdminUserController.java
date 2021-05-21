@@ -37,6 +37,11 @@ public class AdminUserController {
         return adminUserService.getAdminUsers();
     }
 
+    @PostMapping("/login")
+    public Boolean checkAuth(@RequestBody AdminUserDTO adminUserDTO){
+        return adminUserService.checkAuth(adminUserDTO);
+    }
+
     @GetMapping("/story")
     public List<Story> getAllStories(){
         return storyService.getStories();
