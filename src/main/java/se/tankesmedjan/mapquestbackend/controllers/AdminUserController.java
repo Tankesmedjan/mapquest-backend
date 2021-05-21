@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.AdminUserDTO;
 import se.tankesmedjan.mapquestbackend.dto.MissionDTO;
@@ -59,6 +60,11 @@ public class AdminUserController {
     @PostMapping("/mission")
     public MissionDTO addMission(@RequestBody MissionDTO missionDTO){
         return missionService.addMissions(missionDTO);
+    }
+
+    @PutMapping("/story/edit")
+    public StoryDTO editStory(@Param("id") Long id, @RequestBody StoryDTO storyDTO){
+        return storyService.editStory(id, storyDTO);
     }
 
     @PutMapping("/mission/edit")
