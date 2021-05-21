@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class GameMissionDTO {
 
-    private double longitude;
-    private double latitude;
+    private double lng;
+    private double lat;
 
     private Long gameId;
     private Long missionId;

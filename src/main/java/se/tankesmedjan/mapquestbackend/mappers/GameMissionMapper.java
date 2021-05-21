@@ -12,8 +12,8 @@ public interface GameMissionMapper {
 
     GameMissionMapper INSTANCE = Mappers.getMapper( GameMissionMapper.class );
 
-    @Mapping(source = "latitude", target = "latitude")
-    @Mapping(source = "longitude", target = "longitude")
+    @Mapping(source = "lat", target = "lat")
+    @Mapping(source = "lng", target = "lng")
     @Mapping(source = "gameId", target = "gameId.id")
     @Mapping(source = "missionId", target = "missionId.id")
     GameMission dtoToGameMission (GameMissionDTO gameMissionDTO);

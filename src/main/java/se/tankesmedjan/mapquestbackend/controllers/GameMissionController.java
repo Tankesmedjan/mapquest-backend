@@ -6,6 +6,7 @@ import se.tankesmedjan.mapquestbackend.dto.GameMissionDTO;
 import se.tankesmedjan.mapquestbackend.models.GameMission;
 import se.tankesmedjan.mapquestbackend.services.GameMissionService;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 @CrossOrigin
@@ -34,5 +35,6 @@ public class GameMissionController {
     public String deleteGameMission(@RequestParam Long id) {
         return "Successfully deleted the GameMission by the id of: " + gameMissionService.deleteGameMission(id).getId();
     }
+
 
 }
