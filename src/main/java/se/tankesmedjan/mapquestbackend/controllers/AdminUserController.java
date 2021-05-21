@@ -61,6 +61,11 @@ public class AdminUserController {
         return missionService.addMissions(missionDTO);
     }
 
+    @PutMapping("/mission/edit")
+    public MissionDTO editMission(@RequestParam Long id, @RequestBody MissionDTO missionDTO){
+        return missionService.editMission(id, missionDTO);
+    }
+
     @DeleteMapping("/delete")
     public String deleteAdminUser(@RequestParam String id) {
         return "Successfully deleted the AdminUser: " + adminUserService.deleteAdminUser(id).getUsername();
