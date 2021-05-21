@@ -28,6 +28,11 @@ public class AdminUserService {
         return adminUserRepo.findAll();
     }
 
+    /**
+     * Checks if the username and password is correct.
+     * @param adminUserDTO contains username and password.
+     * @return true or false based on the input.
+     */
     public Boolean checkAuth(AdminUserDTO adminUserDTO){
         return !adminUserRepo.findAdminUserByUsernameAndPassword(adminUserDTO.getUsername(), adminUserDTO.getPassword()).isEmpty();
     }

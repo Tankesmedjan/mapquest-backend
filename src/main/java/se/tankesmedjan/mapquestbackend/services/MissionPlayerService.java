@@ -26,12 +26,22 @@ public class MissionPlayerService {
         return missionPlayer;
     }
 
+    /**
+     * Basic method for adding a MissionPlayer.
+     * @param missionPlayerDTO the body of a MissionPlayer
+     * @return saves the MissionPlayer.
+     */
     public MissionPlayerDTO addMissionPlayer(MissionPlayerDTO missionPlayerDTO) {
 
         missionPlayerRepo.save(MissionPlayerMapper.INSTANCE.dtoToMissionPlayer(missionPlayerDTO));
         return missionPlayerDTO;
     }
 
+    /**
+     * Basic method for getting a list of all MissionPlayer.
+     *
+     * @return the list of all MissionPlayers.
+     */
     public List<MissionPlayer> getMissionPlayer() {
         return missionPlayerRepo.findAll();
     }
