@@ -2,6 +2,7 @@ package se.tankesmedjan.mapquestbackend.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;

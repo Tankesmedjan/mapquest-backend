@@ -47,4 +47,16 @@ public class StoryService {
         storyRepo.delete(story);
         return story;
     }
+
+    public StoryDTO editStory(Long id, StoryDTO storyDTO) {
+        Story storyToEdit = storyRepo.findStoryById(id);
+        if (storyDTO.getStoryName() != null) {
+            storyToEdit.setStoryName(storyDTO.getStoryName());
+        }
+        if (storyDTO.getStoryText() != null) {
+            storyToEdit.setStoryText(storyDTO.getStoryText());
+        }
+        storyRepo.save(storyToEdit);
+        return storyDTO;
+    }
 }

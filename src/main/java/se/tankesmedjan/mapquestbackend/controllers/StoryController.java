@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
 import se.tankesmedjan.mapquestbackend.models.Story;
@@ -33,5 +34,10 @@ public class StoryController {
     @DeleteMapping("/delete")
     public String deleteStories(@RequestParam Long id){
         return "Successfully deleted the story: " + storyService.deleteStory(id).getStoryName();
+    }
+
+    @PutMapping("/edit")
+    public StoryDTO editStory(@Param("id") Long id, @RequestBody StoryDTO storyDTO) {
+        return storyService.editStory(id, storyDTO);
     }
 }
