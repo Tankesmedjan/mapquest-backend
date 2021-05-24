@@ -17,9 +17,9 @@ public class MissionQA {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "missionQAs", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "missionQAs", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Mission> missionId;
+    private Mission missionId;
 
     private String question;
     private String answer1;
