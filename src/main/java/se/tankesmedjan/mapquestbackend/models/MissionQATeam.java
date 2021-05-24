@@ -23,4 +23,9 @@ public class MissionQATeam {
     private String answered;
     private String correct;
 
+    @ManyToOne
+    @JoinColumn(name = "teamId")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Team team;
+
 }
