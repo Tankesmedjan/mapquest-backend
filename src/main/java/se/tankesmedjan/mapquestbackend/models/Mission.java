@@ -39,4 +39,18 @@ public class Mission {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Story story;
 
+//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JsonIgnore
+//    @JoinColumn(name = "missionQAId", referencedColumnName = "id")
+//    private MissionQA missionQAs;
+
+    @OneToMany(mappedBy = "missionId", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<GameMission> gameMissions;
+
+    @ManyToOne
+    @JoinColumn(name = "missionQAId", referencedColumnName = "id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private MissionQA missionQAs;
 }
+

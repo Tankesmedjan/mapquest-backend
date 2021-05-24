@@ -3,7 +3,10 @@ package se.tankesmedjan.mapquestbackend.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.GameMissionDTO;
+import se.tankesmedjan.mapquestbackend.models.Game;
 import se.tankesmedjan.mapquestbackend.models.GameMission;
+import se.tankesmedjan.mapquestbackend.models.Mission;
+import se.tankesmedjan.mapquestbackend.models.MissionQA;
 import se.tankesmedjan.mapquestbackend.services.GameMissionService;
 
 import javax.persistence.EntityManager;

@@ -24,8 +24,9 @@ public class GameMission {
     private double lat;
     private double lng;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "missionId", referencedColumnName = "id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Mission missionId;
+
 }
