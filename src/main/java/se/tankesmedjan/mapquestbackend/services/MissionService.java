@@ -34,18 +34,21 @@ public class MissionService {
      */
     public MissionDTO addMissions(MissionDTO missionDTO) {
         Mission mission = MissionMapper.INSTANCE.dtoToMission(missionDTO);
+        missionRepo.save(mission);
 
         if(mission.isIzQuestion()){
-
-            missionRepo.save(mission);
             missionDTO.setMissionId(mission.getId());
 
             MissionQA missionQA = MissionQAMapper.INSTANCE.dtoToMissionQA(missionDTO);
+            missionQA.setMissionId(mission);
             missionQARepo.save(missionQA);
+
+            Mission missionEdit = missionRepo.findMissionById(mission.getId());
+            missionEdit.setMissionQAs(missionQA);
+            missionRepo.save(missionEdit);
             return missionDTO;
         }
 
-        missionRepo.save(mission);
         return missionDTO;
     }
 
@@ -91,7 +94,6 @@ public class MissionService {
         missionDTO.setMissionId(missionEdit.getId());
 
         if(missionEdit.isIzQuestion()) {
-            MissionQA missionId = MissionQAMapper.INSTANCE.dtoToMissionQA(missionDTO);
             MissionQA missionQAEdit = missionQARepo.findMissionQAbyMissionId(id);
 
             missionQAEdit.setAnswer1(missionDTO.getAnswer1());
@@ -99,14 +101,11 @@ public class MissionService {
             missionQAEdit.setAnswer2(missionDTO.getAnswer2());
             missionQAEdit.setQuestion(missionDTO.getQuestion());
             missionQAEdit.setCorrectAnswer(missionDTO.getCorrectAnswer());
-            missionQAEdit.setMissionId(missionId.getMissionId());
             missionQARepo.save(missionQAEdit);
+            missionEdit.setMissionQAs(missionQAEdit);
+            return missionDTO;
         }
+
         return missionDTO;
     }
-
-    public List<Mission> getMissionPointers(Long id) {
-        return missionRepo.getMissionPointers(id);
-    }
-
 }

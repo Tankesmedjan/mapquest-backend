@@ -11,5 +11,8 @@ public interface MissionRepo extends CrudRepository<Mission, Long> {
 
     List<Mission> findAll();
     Mission findMissionById(Long id);
+
+    @Query("SELECT MAX(m.id) FROM Mission m ")
+    Long fetchLastId();
 }
 

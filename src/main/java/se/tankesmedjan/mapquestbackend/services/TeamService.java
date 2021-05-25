@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.TeamDTO;
 import se.tankesmedjan.mapquestbackend.mappers.TeamMapper;
+import se.tankesmedjan.mapquestbackend.models.Player;
 import se.tankesmedjan.mapquestbackend.models.Team;
 import se.tankesmedjan.mapquestbackend.repositories.TeamRepo;
 
@@ -35,6 +36,10 @@ public class TeamService {
      */
     public List<Team> getTeams() {
         return teamRepo.findAll();
+    }
+
+    public List<Player> getTeamAndPlayer(Long id){
+        return teamRepo.findPlayersByTeamId(id);
     }
 
     /**

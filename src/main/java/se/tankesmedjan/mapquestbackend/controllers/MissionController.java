@@ -39,9 +39,4 @@ public class MissionController {
     public String deleteMissions(@RequestParam Long id){
         return "Successfully deleted: " + missionService.deleteMission(id).getMissionName();
     }
-
-    @GetMapping("/pointers")
-    public List<Mission> getMissionPointers(@RequestParam Long id) {
-        return missionService.getMissionPointers(id);
-    }
 }
