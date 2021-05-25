@@ -104,4 +104,9 @@ public class MissionService {
         }
         return missionDTO;
     }
+
+    public List<Mission> getMissionPointers(Long id) {
+        return missionRepo.getMissionPointers(id);
+    }
+
 }

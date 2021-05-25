@@ -3,7 +3,6 @@ package se.tankesmedjan.mapquestbackend.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.MissionPlayerDTO;
-import se.tankesmedjan.mapquestbackend.mappers.GameMissionMapper;
 import se.tankesmedjan.mapquestbackend.mappers.MissionPlayerMapper;
 import se.tankesmedjan.mapquestbackend.models.MissionPlayer;
 import se.tankesmedjan.mapquestbackend.repositories.MissionPlayerRepo;

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.MissionDTO;
 import se.tankesmedjan.mapquestbackend.models.Mission;
-import se.tankesmedjan.mapquestbackend.repositories.MissionRepo;
 import se.tankesmedjan.mapquestbackend.services.MissionService;
 
 import java.util.List;
@@ -39,5 +38,10 @@ public class MissionController {
     @DeleteMapping("/delete")
     public String deleteMissions(@RequestParam Long id){
         return "Successfully deleted: " + missionService.deleteMission(id).getMissionName();
+    }
+
+    @GetMapping("/pointers")
+    public List<Mission> getMissionPointers(@RequestParam Long id) {
+        return missionService.getMissionPointers(id);
     }
 }

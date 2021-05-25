@@ -2,10 +2,8 @@ package se.tankesmedjan.mapquestbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import se.tankesmedjan.mapquestbackend.dto.UserDTO;
 import se.tankesmedjan.mapquestbackend.mappers.UserMapper;
-import se.tankesmedjan.mapquestbackend.models.AdminUser;
 import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.repositories.UserRepo;
 

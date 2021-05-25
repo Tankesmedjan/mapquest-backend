@@ -3,7 +3,6 @@ package se.tankesmedjan.mapquestbackend.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.MissionDTO;
-import se.tankesmedjan.mapquestbackend.mappers.MissionMapper;
 import se.tankesmedjan.mapquestbackend.mappers.MissionQAMapper;
 import se.tankesmedjan.mapquestbackend.models.MissionQA;
 import se.tankesmedjan.mapquestbackend.repositories.MissionQARepo;

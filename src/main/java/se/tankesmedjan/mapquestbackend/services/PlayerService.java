@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.PlayerDTO;
 import se.tankesmedjan.mapquestbackend.mappers.PlayerMapper;
 import se.tankesmedjan.mapquestbackend.models.Player;
-import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.repositories.PlayerRepo;
 
 import java.util.List;

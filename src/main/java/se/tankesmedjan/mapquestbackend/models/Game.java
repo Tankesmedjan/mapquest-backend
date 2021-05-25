@@ -36,8 +36,8 @@ public class Game {
     @JsonIgnore
     private List<Team> team;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gameId")
-    @JsonIgnore
-    private List<GameMission> gameMissions;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gameId")
+//    @JsonIgnore
+//    private List<GameMission> gameMissions;
 
 }
