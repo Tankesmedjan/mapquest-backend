@@ -19,6 +19,12 @@ public class MissionPlayerService {
         this.missionPlayerRepo = missionPlayerRepo;
     }
 
+    /**
+     * Basic method for deleting a player
+     * @param id of the player expected to be deleted
+     * @return the deleted player
+     */
+
     public MissionPlayer deletePlayer(Long id) {
         MissionPlayer missionPlayer = missionPlayerRepo.findMissionPlayerById(id);
         missionPlayerRepo.delete(missionPlayer);

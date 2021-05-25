@@ -26,7 +26,7 @@ public class GameMissionController {
         return gameMissionService.addGameMissions(gameMissionDTO);
     }
 
-    @GetMapping()
+    @GetMapping
     public List<GameMission> getMissionPointers(@Param("id") Long id){
         return gameMissionService.getMissionsPointers(id);
     }
