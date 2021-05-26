@@ -32,4 +32,9 @@ public class Team {
     @JsonIgnore
     private Scoreboard scoreboard;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "team")
+    @JsonIgnore
+    private List<MissionQATeam> missionQATeamList;
+
+
 }
