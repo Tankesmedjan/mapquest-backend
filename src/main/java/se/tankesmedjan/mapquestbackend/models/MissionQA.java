@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,6 +19,10 @@ public class MissionQA {
     @OneToOne(mappedBy = "missionQAs", cascade = CascadeType.ALL)
     @JsonIgnore
     private Mission missionId;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "missionQAId")
+    @JsonIgnore
+    private List<MissionQATeam> missionQATeam;
 
     private String question;
     private String answer1;

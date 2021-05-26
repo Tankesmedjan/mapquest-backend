@@ -47,5 +47,9 @@ public class Mission {
     @JoinColumn(name = "missionQAId", referencedColumnName = "id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private MissionQA missionQAs;
+
+    @OneToMany(mappedBy = "missionId", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<MissionPlayer> missionPlayers;
 }
 
