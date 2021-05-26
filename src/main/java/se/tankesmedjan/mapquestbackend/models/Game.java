@@ -32,9 +32,13 @@ public class Game {
     @JsonIgnore
     private User user;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "game")
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Team> team;
+
+    @OneToOne(mappedBy = "game", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Scoreboard scoreboard;
 
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gameId")
 //    @JsonIgnore

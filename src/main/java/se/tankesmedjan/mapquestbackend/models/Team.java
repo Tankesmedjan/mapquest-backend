@@ -28,4 +28,8 @@ public class Team {
     @JsonIgnore
     private List<Player> playerList;
 
+    @OneToOne(mappedBy = "team", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Scoreboard scoreboard;
+
 }
