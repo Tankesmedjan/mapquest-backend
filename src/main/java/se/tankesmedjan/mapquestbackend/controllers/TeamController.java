@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.TeamDTO;
 import se.tankesmedjan.mapquestbackend.models.Player;
@@ -31,8 +32,8 @@ public class TeamController {
         return teamService.getTeams();
     }
 
-    @GetMapping("/id")
-    public List<Player> getTeamPlayers(@RequestParam Long id){
+    @GetMapping("/teamplayers")
+    public List<Player> getTeamPlayers(@Param("id") Long id){
         return teamService.getTeamAndPlayer(id);
     }
 
