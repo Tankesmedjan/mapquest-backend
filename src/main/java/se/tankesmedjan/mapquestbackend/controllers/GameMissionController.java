@@ -32,7 +32,7 @@ public class GameMissionController {
     }
 
     @DeleteMapping("/delete")
-    public String deleteGameMission(@RequestParam Long id) {
+    public String deleteGameMission(@Param("id") Long id) {
         return "Successfully deleted the GameMission by the id of: " + gameMissionService.deleteGameMission(id).getId();
     }
 

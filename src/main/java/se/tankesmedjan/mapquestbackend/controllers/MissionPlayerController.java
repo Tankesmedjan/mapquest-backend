@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.MissionPlayerDTO;
 import se.tankesmedjan.mapquestbackend.models.MissionPlayer;
@@ -31,7 +32,7 @@ public class MissionPlayerController {
     }
 
     @DeleteMapping("/delete")
-    public String deleteMissionPlayer(@RequestParam Long id){
+    public String deleteMissionPlayer(@Param("id") Long id){
         return "Successfully deleted MissionPlayer with time: " + missionPlayerService.deletePlayer(id).getTimer().toString();
     }
 }

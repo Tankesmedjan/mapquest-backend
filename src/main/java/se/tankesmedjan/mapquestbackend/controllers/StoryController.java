@@ -32,7 +32,7 @@ public class StoryController {
     }
 
     @DeleteMapping("/delete")
-    public String deleteStories(@RequestParam Long id){
+    public String deleteStories(@Param("id") Long id){
         return "Successfully deleted the story: " + storyService.deleteStory(id).getStoryName();
     }
 

@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.PlayerDTO;
 import se.tankesmedjan.mapquestbackend.models.Player;
@@ -29,7 +30,7 @@ public class PlayerController {
     }
 
     @DeleteMapping("/delete")
-    public String deletePlayer(@RequestParam String id) {
+    public String deletePlayer(@Param("id") String id) {
         return "Successfully deleted the player: " + playerService.deletePlayer(id).getName();
     }
 }

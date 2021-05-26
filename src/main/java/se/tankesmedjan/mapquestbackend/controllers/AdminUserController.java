@@ -73,22 +73,22 @@ public class AdminUserController {
     }
 
     @PutMapping("/mission/edit")
-    public MissionDTO editMission(@RequestParam Long id, @RequestBody MissionDTO missionDTO){
+    public MissionDTO editMission(@Param("id") Long id, @RequestBody MissionDTO missionDTO){
         return missionService.editMission(id, missionDTO);
     }
 
     @DeleteMapping("/delete")
-    public String deleteAdminUser(@RequestParam String id) {
+    public String deleteAdminUser(@Param("id") String id) {
         return "Successfully deleted the AdminUser: " + adminUserService.deleteAdminUser(id).getUsername();
     }
 
     @DeleteMapping("/story/delete")
-    public String deleteStory(@RequestParam Long id){
+    public String deleteStory(@Param("id") Long id){
         return "Successfully deleted the story of: " + storyService.deleteStory(id).getStoryName();
     }
 
     @DeleteMapping("/mission/delete")
-    public String deleteMission(@RequestParam Long id){
+    public String deleteMission(@Param("id") Long id){
         return "Successfully deleted the mission: " + missionService.deleteMission(id).getMissionName();
     }
 }

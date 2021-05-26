@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.MissionDTO;
 import se.tankesmedjan.mapquestbackend.models.MissionQA;
@@ -31,12 +32,12 @@ public class MissionQAController {
     }
 
     @GetMapping("/id")
-    public List<MissionQA> getQuestion(@RequestParam Long id){
+    public List<MissionQA> getQuestion(@Param("id") Long id){
         return missionQAService.getQuestion(id);
     }
 
     @DeleteMapping("/delete")
-    public String deleteMissionQA(@RequestParam Long id){
+    public String deleteMissionQA(@Param("id") Long id){
          return "successfully deleted missionQA: " + missionQAService.deleteMission(id).getMissionId().getMissionName();
     }
 }
