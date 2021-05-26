@@ -20,5 +20,8 @@ public interface UserMapper {
 
     @Mapping(source = "name", target = "name")
     @Mapping(source = "email", target = "email")
+    @Mapping(source = "password", target = "password")
+    @Mapping(source = "timestampActivation", target = "timestampActivation")
+    @Mapping(source = "timestampExpired", target = "timestampExpired")
     User dtoToUser (UserDTO userDTO);
 }

@@ -47,4 +47,8 @@ public class UserService {
         userRepo.delete(user);
         return user;
     }
+
+    public Boolean checkAuth(UserDTO userDTO) {
+        return !userRepo.findUserByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).isEmpty();
+    }
 }

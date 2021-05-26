@@ -30,6 +30,11 @@ public class UserController {
         return userService.getUsers();
     }
 
+    @GetMapping("/login")
+    public Boolean getAccessCode(@RequestBody UserDTO userDTO){
+      return userService.checkAuth(userDTO);
+    }
+
     @DeleteMapping("/delete")
     public String deleteUser(@RequestParam String id) {
         return "Successfully deleted the User: " + userService.deleteUser(id).getName();
