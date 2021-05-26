@@ -6,8 +6,6 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 import java.sql.Timestamp;
 
 @Getter
@@ -22,7 +20,6 @@ public class User {
 
     private String name;
     private String email;
-
     private String password;
     private Timestamp timestampActivation;
     private Timestamp timestampExpired;

@@ -6,6 +6,7 @@ import se.tankesmedjan.mapquestbackend.dto.UserDTO;
 import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.services.UserService;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @CrossOrigin
@@ -23,6 +24,11 @@ public class UserController {
     @PostMapping
     public UserDTO addUser(@RequestBody UserDTO user){
         return userService.addUser(user);
+    }
+
+    @PostMapping("/timestamp")
+    public Timestamp setTimestamp(@RequestParam String id){
+        return userService.setTimestamp(id);
     }
 
     @GetMapping
