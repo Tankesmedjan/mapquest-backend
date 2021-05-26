@@ -41,6 +41,11 @@ public class UserController {
       return userService.checkAuth(userDTO);
     }
 
+    @GetMapping("/timestamp")
+    public Boolean checkTimestamp(@RequestParam String id){
+        return userService.checkTimestamp(id);
+    }
+
     @DeleteMapping("/delete")
     public String deleteUser(@RequestParam String id) {
         return "Successfully deleted the User: " + userService.deleteUser(id).getName();

@@ -55,6 +55,18 @@ public class UserService {
         return !userRepo.findUserByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).isEmpty();
     }
 
+    public Boolean checkTimestamp(String id){
+        User user = userRepo.findUserById(id);
+
+        Date date = new Date();
+        date.setTime(date.getTime());
+
+        if(user.getTimestampActivation().before(date)){
+            return user.getTimestampExpired().after(date);
+        }
+        return false;
+    }
+
     public Timestamp setTimestamp(String id) {
         User user = userRepo.findUserById(id);
         Date date = new Date();
