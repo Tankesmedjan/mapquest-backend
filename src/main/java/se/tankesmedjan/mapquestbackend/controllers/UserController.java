@@ -37,7 +37,7 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public Boolean getAccessCode(@RequestBody UserDTO userDTO){
       return userService.checkAuth(userDTO);
     }
