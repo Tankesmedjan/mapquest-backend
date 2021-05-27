@@ -38,6 +38,11 @@ public class TeamService {
         return teamRepo.findAll();
     }
 
+    /**
+     * Basic method for getting a list of all players in a team.
+     * @param id the ID of team
+     * @return a list of all players in the team.
+     */
     public List<Player> getTeamAndPlayer(Long id){
         return teamRepo.findPlayersByTeamId(id);
     }

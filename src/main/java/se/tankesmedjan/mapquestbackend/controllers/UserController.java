@@ -32,14 +32,14 @@ public class UserController {
         return userService.setTimestamp(id);
     }
 
-    @GetMapping
-    public List<User> getUsers() {
-        return userService.getUsers();
-    }
-
     @PostMapping("/login")
     public Boolean getAccessCode(@RequestBody UserDTO userDTO){
       return userService.checkAuth(userDTO);
+    }
+
+    @GetMapping
+    public List<User> getUsers() {
+        return userService.getUsers();
     }
 
     @GetMapping("/timestamp")

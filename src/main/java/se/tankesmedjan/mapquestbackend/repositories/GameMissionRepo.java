@@ -11,7 +11,6 @@ public interface GameMissionRepo extends CrudRepository<GameMission, Long> {
      * nativQuery that selects all gamemission information needed for a specific game,
      * includes MissionQA & Mission.
      * @param id specific game.
-     *
      */
     @Query(value = "select * from game_mission gm " +
             "inner join mission m on gm.mission_id = m.id " +

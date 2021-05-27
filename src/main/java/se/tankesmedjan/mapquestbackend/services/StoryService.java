@@ -65,4 +65,8 @@ public class StoryService {
         storyRepo.save(storyToEdit);
         return storyDTO;
     }
+
+    public Story getStory(Long id) {
+        return storyRepo.findStoryById(id);
+    }
 }

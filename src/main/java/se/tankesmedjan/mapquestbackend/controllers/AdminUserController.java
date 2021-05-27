@@ -32,29 +32,14 @@ public class AdminUserController {
         this.missionService = missionService;
     }
 
-    @GetMapping
-    public List<AdminUser> getAdminUsers() {
-        return adminUserService.getAdminUsers();
+    @PostMapping
+    public AdminUserDTO addAdminUser(@RequestBody AdminUserDTO adminUserDTO) {
+        return adminUserService.addAdminUser(adminUserDTO);
     }
 
     @PostMapping("/login")
     public Boolean checkAuth(@RequestBody AdminUserDTO adminUserDTO){
         return adminUserService.checkAuth(adminUserDTO);
-    }
-
-    @GetMapping("/story")
-    public List<Story> getAllStories(){
-        return storyService.getStories();
-    }
-
-    @GetMapping("/mission")
-    public List<Mission> getAllMissions(){
-        return missionService.getAllMissions();
-    }
-
-    @PostMapping
-    public AdminUserDTO addAdminUser(@RequestBody AdminUserDTO adminUserDTO) {
-        return adminUserService.addAdminUser(adminUserDTO);
     }
 
     @PostMapping("/story")
@@ -75,6 +60,21 @@ public class AdminUserController {
     @PutMapping("/mission/edit")
     public MissionDTO editMission(@Param("id") Long id, @RequestBody MissionDTO missionDTO){
         return missionService.editMission(id, missionDTO);
+    }
+
+    @GetMapping
+    public List<AdminUser> getAdminUsers() {
+        return adminUserService.getAdminUsers();
+    }
+
+    @GetMapping("/story")
+    public List<Story> getAllStories(){
+        return storyService.getStories();
+    }
+
+    @GetMapping("/mission")
+    public List<Mission> getAllMissions(){
+        return missionService.getAllMissions();
     }
 
     @DeleteMapping("/delete")

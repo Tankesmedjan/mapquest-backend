@@ -19,14 +19,14 @@ public class PlayerController {
     @Autowired
     public PlayerController(PlayerService playerService) { this.playerService = playerService; }
 
-    @GetMapping
-    public List<Player> getPlayers() {
-        return playerService.getPlayers();
-    }
-
     @PostMapping
     public PlayerDTO addPlayer(@RequestBody PlayerDTO player) {
         return playerService.addPlayer(player);
+    }
+
+    @GetMapping
+    public List<Player> getPlayers() {
+        return playerService.getPlayers();
     }
 
     @DeleteMapping("/delete")

@@ -51,10 +51,21 @@ public class UserService {
         return user;
     }
 
+    /**
+     * basic method to chek if the user exists in the database.
+     * @param userDTO the input of the user.
+     * @return if true, the user logs in.
+     */
     public Boolean checkAuth(UserDTO userDTO) {
         return !userRepo.findUserByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).isEmpty();
     }
 
+
+    /**
+     * Basic method to check if the user has a valid game session based on timestamps.
+     * @param id the id of the user.
+     * @return true or false based on the outcome.
+     */
     public Boolean checkTimestamp(String id){
         User user = userRepo.findUserById(id);
 
@@ -67,6 +78,11 @@ public class UserService {
         return false;
     }
 
+    /**
+     * Basic method to set a timestamp for activating the game session, and also when it expires.
+     * @param id the id of the user.
+     * @return sets
+     */
     public Timestamp setTimestamp(String id) {
         User user = userRepo.findUserById(id);
         Date date = new Date();

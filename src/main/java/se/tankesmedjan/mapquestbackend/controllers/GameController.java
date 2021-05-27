@@ -21,14 +21,14 @@ public class GameController {
         this.gameService = gameService;
     }
 
-    @GetMapping
-    public List<Game> getGames() {
-        return gameService.getGames();
-    }
-
     @PostMapping
     public GameDTO addGame(@RequestBody GameDTO gameDTO) {
         return gameService.addGame(gameDTO);
+    }
+
+    @GetMapping
+    public List<Game> getGames() {
+        return gameService.getGames();
     }
 
     @DeleteMapping("/delete")

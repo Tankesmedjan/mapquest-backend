@@ -10,11 +10,7 @@ public interface MissionQARepo extends CrudRepository<MissionQA, Long> {
 
     List<MissionQA> findAll();
     List<MissionQA> findAllById(Long id);
-
     MissionQA findMissionQAById(Long id);
-
-    @Query("SELECT MAX(mqa.id) FROM MissionQA mqa ")
-    Long fetchLastId();
 
     @Query("SELECT mqa FROM MissionQA mqa " +
             "inner join Mission m on m.missionQAs.id = mqa.id " +

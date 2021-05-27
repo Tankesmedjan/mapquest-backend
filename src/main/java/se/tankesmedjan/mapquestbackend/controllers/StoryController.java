@@ -21,23 +21,28 @@ public class StoryController {
         this.storyService = storyService;
     }
 
-    @GetMapping
-    public List<Story> getStories() {
-        return storyService.getStories();
-    }
-
     @PostMapping
     public StoryDTO addStory(@RequestBody StoryDTO story){
         return storyService.addStories(story);
     }
 
-    @DeleteMapping("/delete")
-    public String deleteStories(@Param("id") Long id){
-        return "Successfully deleted the story: " + storyService.deleteStory(id).getStoryName();
+    @GetMapping
+    public List<Story> getStories() {
+        return storyService.getStories();
+    }
+
+    @GetMapping("/select")
+    public Story getStory(@Param("id") Long id){
+        return storyService.getStory(id);
     }
 
     @PutMapping("/edit")
     public StoryDTO editStory(@Param("id") Long id, @RequestBody StoryDTO storyDTO) {
         return storyService.editStory(id, storyDTO);
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteStories(@Param("id") Long id){
+        return "Successfully deleted the story: " + storyService.deleteStory(id).getStoryName();
     }
 }
