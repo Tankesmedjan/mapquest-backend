@@ -1,6 +1,7 @@
 package se.tankesmedjan.mapquestbackend.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -23,12 +24,14 @@ public class GameProgress {
     @JsonIgnore
     private Game game;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gameProgress")
-    @JsonIgnore
-    private List<Team> teams;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "teams")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Team team;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gameProgress")
-    @JsonIgnore
-    private List<Mission> missions;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mission")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Mission mission;
 
 }

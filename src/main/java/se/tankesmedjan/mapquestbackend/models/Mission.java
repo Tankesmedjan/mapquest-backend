@@ -52,9 +52,8 @@ public class Mission {
     @JsonIgnore
     private List<MissionPlayer> missionPlayers;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "gameProgress")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private GameProgress gameProgress;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mission")
+    @JsonIgnore
+    private List<GameProgress> gameProgressList;
 }
 
