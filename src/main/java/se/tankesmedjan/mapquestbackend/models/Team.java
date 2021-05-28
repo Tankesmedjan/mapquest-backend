@@ -36,5 +36,8 @@ public class Team {
     @JsonIgnore
     private List<MissionQATeam> missionQATeamList;
 
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "teams")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private GameProgress gameProgress;
 }
