@@ -6,7 +6,7 @@
     <mvc:cors>
 
         <mvc:mapping path="/api/**"
-                     allowed-origins="https://localhost:3000, https://192.168.1.14:3000, https://192.168.1.13:3000, https://151.177.147.211:3000"
+                     allowed-origins="https://0.0.0.0:3000, https://127.0.0.1:3000, https://localhost:3000, https://192.168.1.14:3000, https://192.168.1.13:3000, https://151.177.147.211:3000"
                      allowed-methods="GET, PUT, POST, DELETE"
                      allowed-headers="Content-Type, Authorization, WWW-Authenticate" />
 
