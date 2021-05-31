@@ -9,6 +9,6 @@ import java.util.List;
 public interface GameProgressRepo extends CrudRepository<GameProgress, String> {
 
     @Query("SELECT gp from GameProgress gp " +
-            "where gp.gameid = ?1")
-    List<GameProgress> findGameProgressByGameid(Long id);
+            "where gp.gameid = ?1 and gp.teamid = ?2")
+    List<GameProgress> findGameProgressByGameid(Long gameid, Long teamid);
 }

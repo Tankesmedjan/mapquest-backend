@@ -21,7 +21,7 @@ public class GameProgressService {
         return gameProgressRepo.save(gameProgress);
     }
 
-    public List<GameProgress> findGameProgress(Long id) {
-        return gameProgressRepo.findGameProgressByGameid(id);
+    public List<GameProgress> findGameProgress(Long gameid, Long teamid) {
+        return gameProgressRepo.findGameProgressByGameid(gameid, teamid);
     }
 }

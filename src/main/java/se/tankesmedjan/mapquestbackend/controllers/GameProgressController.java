@@ -26,7 +26,7 @@ public class GameProgressController {
     }
 
     @GetMapping
-    public List<GameProgress> findGameProgress(@Param("id") Long id) {
-        return gameProgressService.findGameProgress(id);
+    public List<GameProgress> findGameProgress(@Param("gameid") Long gameid, @Param("teamid") Long teamid) {
+        return gameProgressService.findGameProgress(gameid, teamid);
     }
 }
