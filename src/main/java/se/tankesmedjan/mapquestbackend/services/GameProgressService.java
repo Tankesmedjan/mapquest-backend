@@ -15,10 +15,6 @@ public class GameProgressService {
         this.gameProgressRepo = gameProgressRepo;
     }
 
-    public GameProgress getGameProgress(String id) {
-        return gameProgressRepo.findGameProgressById(id);
-    }
-
     public GameProgress addGameProgress(GameProgress gameProgress) {
         return gameProgressRepo.save(gameProgress);
     }

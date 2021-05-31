@@ -40,12 +40,4 @@ public class Game {
     @JsonIgnore
     private Scoreboard scoreboard;
 
-    @OneToOne(mappedBy = "game", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private GameProgress gameProgress;
-
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gameId")
-//    @JsonIgnore
-//    private List<GameMission> gameMissions;
-
 }

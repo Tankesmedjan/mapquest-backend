@@ -51,9 +51,5 @@ public class Mission {
     @OneToMany(mappedBy = "missionId", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<MissionPlayer> missionPlayers;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mission")
-    @JsonIgnore
-    private List<GameProgress> gameProgressList;
 }
 
