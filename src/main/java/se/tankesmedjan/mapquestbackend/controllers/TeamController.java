@@ -35,7 +35,7 @@ public class TeamController {
     @GetMapping
     public List<Team> findTeamsbyGameId(@Param("id") Long id) { return teamService.findTeamsByGameId(id); }
 
-    @GetMapping("/teamplayers")
+    @GetMapping("/teamplayer")
     public List<Player> getTeamPlayers(@Param("id") Long id){
         return teamService.getTeamAndPlayer(id);
     }
