@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.models.GameProgress;
 import se.tankesmedjan.mapquestbackend.repositories.GameProgressRepo;
 
+import java.util.List;
+
 @Service
 public class GameProgressService {
 
@@ -17,5 +19,9 @@ public class GameProgressService {
 
     public GameProgress addGameProgress(GameProgress gameProgress) {
         return gameProgressRepo.save(gameProgress);
+    }
+
+    public List<GameProgress> findGameProgress(Long id) {
+        return gameProgressRepo.findGameProgressByGameid(id);
     }
 }

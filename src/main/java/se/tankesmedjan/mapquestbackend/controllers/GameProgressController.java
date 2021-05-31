@@ -1,9 +1,12 @@
 package se.tankesmedjan.mapquestbackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.models.GameProgress;
 import se.tankesmedjan.mapquestbackend.services.GameProgressService;
+
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -22,4 +25,8 @@ public class GameProgressController {
         return gameProgressService.addGameProgress(gameProgress);
     }
 
+    @GetMapping
+    public List<GameProgress> findGameProgress(@Param("id") Long id) {
+        return gameProgressService.findGameProgress(id);
+    }
 }
