@@ -19,5 +19,7 @@ public class GameProgress {
     private String id;
 
     private Long gameid, teamid, missionid;
+    private double missionTime;
+    private String qAnswer;
 
 }
