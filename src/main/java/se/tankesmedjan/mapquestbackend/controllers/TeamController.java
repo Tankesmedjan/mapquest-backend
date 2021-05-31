@@ -27,10 +27,13 @@ public class TeamController {
         return teamService.addTeams(team);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Team> getTeams(){
         return teamService.getTeams();
     }
+
+    @GetMapping
+    public List<Team> findTeamsbyGameId(@Param("id") Long id) { return teamService.findTeamsByGameId(id); }
 
     @GetMapping("/teamplayers")
     public List<Player> getTeamPlayers(@Param("id") Long id){

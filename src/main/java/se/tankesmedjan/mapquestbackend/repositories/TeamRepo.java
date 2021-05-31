@@ -16,4 +16,7 @@ public interface TeamRepo extends CrudRepository<Team, Long> {
             "inner join Team t on t.id = p.team.id " +
             "where t.id = ?1 ")
     List<Player> findPlayersByTeamId(Long id);
+
+
+    List<Team> findTeamsByGameId(Long id);
 }
