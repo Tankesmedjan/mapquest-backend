@@ -30,7 +30,7 @@ public class PlayerController {
     }
 
     @DeleteMapping("/delete")
-    public String deletePlayer(@Param("id") String id) {
+    public String deletePlayer(@Param("id") Long id) {
         return "Successfully deleted the player: " + playerService.deletePlayer(id).getName();
     }
 }

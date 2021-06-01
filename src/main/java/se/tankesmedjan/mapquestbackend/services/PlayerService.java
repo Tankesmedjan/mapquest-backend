@@ -40,7 +40,7 @@ public class PlayerService {
      * @param id the id of the Player to be deleted.
      * @return deletes the chosen Player.
      */
-    public Player deletePlayer(String id) {
+    public Player deletePlayer(Long id) {
         Player player = playerRepo.findPlayerById(id);
         playerRepo.delete(player);
         return player;
