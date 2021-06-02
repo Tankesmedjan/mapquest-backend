@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public Boolean getAccessCode(@RequestBody UserDTO userDTO){
+    public String getAccessCode(@RequestBody UserDTO userDTO){
       return userService.checkAuth(userDTO);
     }
 

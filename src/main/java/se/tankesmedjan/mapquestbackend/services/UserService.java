@@ -56,8 +56,13 @@ public class UserService {
      * @param userDTO the input of the user.
      * @return if true, the user logs in.
      */
-    public Boolean checkAuth(UserDTO userDTO) {
-        return !userRepo.findUserByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).isEmpty();
+    public String checkAuth(UserDTO userDTO) {
+        if (!userRepo.findUserByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).isEmpty()){
+            User user = userRepo.findUserByEmail(userDTO.getEmail());
+            String id = user.getId();
+            return user.getId();
+        }
+        return null;
     }
 
 
