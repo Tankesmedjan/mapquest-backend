@@ -13,6 +13,6 @@ public class GameDTO {
     private double endLong;
 
     private Long storyId;
-    private Long userId;
+    private String userId;
 
 }
