@@ -66,6 +66,11 @@ public class StoryService {
         return storyDTO;
     }
 
+    /**
+     * Basic method for getting a specific story.
+     * @param id the id of the story.
+     * @return the chosen story.
+     */
     public Story getStory(Long id) {
         return storyRepo.findStoryById(id);
     }
