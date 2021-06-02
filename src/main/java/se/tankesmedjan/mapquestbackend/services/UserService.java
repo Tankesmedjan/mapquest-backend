@@ -59,7 +59,6 @@ public class UserService {
     public String checkAuth(UserDTO userDTO) {
         if (!userRepo.findUserByEmailAndPassword(userDTO.getEmail(), userDTO.getPassword()).isEmpty()){
             User user = userRepo.findUserByEmail(userDTO.getEmail());
-            String id = user.getId();
             return user.getId();
         }
         return null;

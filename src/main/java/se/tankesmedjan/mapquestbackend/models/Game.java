@@ -27,9 +27,9 @@ public class Game {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Story story;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "userId", referencedColumnName = "id")
-    @JsonIgnore
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
 
     @OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
