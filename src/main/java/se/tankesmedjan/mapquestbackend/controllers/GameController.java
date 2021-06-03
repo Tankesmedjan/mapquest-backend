@@ -40,4 +40,9 @@ public class GameController {
     public String deleteGame(@Param("id") Long id) {
         return "Successfully deleted the game by the id of: " + gameService.deleteGame(id).getId();
     }
+
+    @GetMapping("/getgame")
+    public Game getSpecificGame(@Param("id") Long id) {
+        return gameService.getSpecificGame(id);
+    }
 }

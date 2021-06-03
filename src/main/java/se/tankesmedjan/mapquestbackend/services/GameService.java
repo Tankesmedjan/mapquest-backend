@@ -54,4 +54,13 @@ public class GameService {
     public List<Game> getGameByUserId(String id) {
         return gameRepo.findGameByUserId(id);
     }
+
+    /**
+     * Basic method for getting a specific Game.
+     * @param id the ID of the Game.
+     * @return the chosen Game.
+     */
+    public Game getSpecificGame(Long id) {
+        return gameRepo.findGameById(id);
+    }
 }

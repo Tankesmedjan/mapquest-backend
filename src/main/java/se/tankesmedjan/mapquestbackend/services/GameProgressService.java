@@ -24,4 +24,8 @@ public class GameProgressService {
     public List<GameProgress> findGameProgress(Long gameid, Long teamid) {
         return gameProgressRepo.findGameProgressByGameid(gameid, teamid);
     }
+
+    public List<GameProgress> findSingleGameProgress(Long gameid) {
+        return gameProgressRepo.findSingleGameProgressByGameid(gameid);
+    }
 }

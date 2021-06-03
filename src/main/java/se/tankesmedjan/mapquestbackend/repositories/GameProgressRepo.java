@@ -11,4 +11,8 @@ public interface GameProgressRepo extends CrudRepository<GameProgress, String> {
     @Query("SELECT gp from GameProgress gp " +
             "where gp.gameid = ?1 and gp.teamid = ?2")
     List<GameProgress> findGameProgressByGameid(Long gameid, Long teamid);
+
+    @Query("SELECT gp from GameProgress gp " +
+            "where gp.gameid = ?1")
+    List<GameProgress> findSingleGameProgressByGameid(Long gameid);
 }

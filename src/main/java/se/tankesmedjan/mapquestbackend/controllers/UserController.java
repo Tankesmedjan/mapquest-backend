@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.UserDTO;
+import se.tankesmedjan.mapquestbackend.models.Game;
 import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.services.UserService;
 
@@ -50,5 +51,10 @@ public class UserController {
     @DeleteMapping("/delete")
     public String deleteUser(@Param("id") String id) {
         return "Successfully deleted the User: " + userService.deleteUser(id).getName();
+    }
+
+    @GetMapping("/usergames")
+    public List<Game> getUserGames(@Param("id") String id) {
+        return userService.findUserGames(id);
     }
 }

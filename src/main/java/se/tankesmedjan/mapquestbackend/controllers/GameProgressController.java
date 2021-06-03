@@ -29,4 +29,10 @@ public class GameProgressController {
     public List<GameProgress> findGameProgress(@Param("gameid") Long gameid, @Param("teamid") Long teamid) {
         return gameProgressService.findGameProgress(gameid, teamid);
     }
+
+    @GetMapping("/snigel")
+    public List<GameProgress> findSingleGameProgress(@Param("gameid") Long gameid) {
+        return gameProgressService.findSingleGameProgress(gameid);
+    }
+
 }
