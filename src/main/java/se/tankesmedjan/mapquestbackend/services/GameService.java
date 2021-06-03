@@ -3,8 +3,10 @@ package se.tankesmedjan.mapquestbackend.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.GameDTO;
+import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
 import se.tankesmedjan.mapquestbackend.mappers.GameMapper;
 import se.tankesmedjan.mapquestbackend.models.Game;
+import se.tankesmedjan.mapquestbackend.models.Story;
 import se.tankesmedjan.mapquestbackend.repositories.GameRepo;
 
 import java.util.List;
@@ -50,6 +52,15 @@ public class GameService {
         gameRepo.delete(game);
         return game;
     }
+
+    public GameDTO editGame(Long id, GameDTO gameDTO) {
+        Game gameToEdit = gameRepo.findGameById(id);
+        gameToEdit.setLng(gameDTO.getLng());
+        gameToEdit.setLat(gameDTO.getLat());
+        gameRepo.save(gameToEdit);
+        return gameDTO;
+    }
+
 
     public List<Game> getGameByUserId(String id) {
         return gameRepo.findGameByUserId(id);

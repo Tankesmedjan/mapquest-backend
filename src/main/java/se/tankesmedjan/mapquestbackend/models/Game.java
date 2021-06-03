@@ -17,10 +17,9 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private double startLat;
-    private double startLong;
-    private double endLat;
-    private double endLong;
+    private double lat;
+    private double lng;
+
 
     @ManyToOne
     @JoinColumn(name = "storyId", referencedColumnName = "id")

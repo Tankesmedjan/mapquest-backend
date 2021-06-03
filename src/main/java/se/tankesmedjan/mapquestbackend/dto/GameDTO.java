@@ -7,10 +7,9 @@ import lombok.Setter;
 @Setter
 public class GameDTO {
 
-    private double startLat;
-    private double startLong;
-    private double endLat;
-    private double endLong;
+    private double lat;
+    private double lng;
+
 
     private Long storyId;
     private String userId;

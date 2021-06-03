@@ -18,10 +18,8 @@ public interface GameMapper {
 
     GameMapper INSTANCE = Mappers.getMapper(GameMapper.class);
 
-    @Mapping(source = "startLat", target = "startLat")
-    @Mapping(source = "startLong", target = "startLong")
-    @Mapping(source = "endLat", target = "endLat")
-    @Mapping(source = "endLong", target = "endLong")
+    @Mapping(source = "lat", target = "lat")
+    @Mapping(source = "lng", target = "lng")
     @Mapping(source = "storyId", target = "story.id")
     @Mapping(source = "userId", target = "user.id")
     Game dtoToGame(GameDTO gameDTO);
