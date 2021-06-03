@@ -31,6 +31,11 @@ public class GameController {
         return gameService.getGames();
     }
 
+    @GetMapping("/select")
+    public List<Game> getGameByUserId(@Param("id") String id){
+        return gameService.getGameByUserId(id);
+    }
+
     @DeleteMapping("/delete")
     public String deleteGame(@Param("id") Long id) {
         return "Successfully deleted the game by the id of: " + gameService.deleteGame(id).getId();

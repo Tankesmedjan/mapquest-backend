@@ -50,4 +50,8 @@ public class GameService {
         gameRepo.delete(game);
         return game;
     }
+
+    public List<Game> getGameByUserId(String id) {
+        return gameRepo.findGameByUserId(id);
+    }
 }
