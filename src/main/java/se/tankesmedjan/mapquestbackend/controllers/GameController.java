@@ -45,4 +45,9 @@ public class GameController {
     public GameDTO editGame(@Param("id") Long id, @RequestBody GameDTO gameDTO) {
         return gameService.editGame(id, gameDTO);
     }
+
+    @GetMapping("/getgame")
+    public Game getSpecificGame(@Param("id") Long id) {
+        return gameService.getSpecificGame(id);
+    }
 }

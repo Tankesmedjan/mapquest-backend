@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.UserDTO;
 import se.tankesmedjan.mapquestbackend.mappers.UserMapper;
+import se.tankesmedjan.mapquestbackend.models.Game;
 import se.tankesmedjan.mapquestbackend.models.User;
 import se.tankesmedjan.mapquestbackend.repositories.UserRepo;
 
@@ -100,5 +101,9 @@ public class UserService {
         user.setTimestampExpired(ts);
         userRepo.save(user);
         return ts;
+    }
+
+    public List<Game> findUserGames(String id) {
+        return userRepo.findGameByUserId(id);
     }
 }
