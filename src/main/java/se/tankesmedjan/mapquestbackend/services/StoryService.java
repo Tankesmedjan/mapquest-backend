@@ -56,10 +56,9 @@ public class StoryService {
      */
     public StoryDTO editStory(Long id, StoryDTO storyDTO) {
         Story storyToEdit = storyRepo.findStoryById(id);
-        if (storyDTO.getStoryName() != null) {
+        if(storyDTO.getStoryText().isEmpty()){
             storyToEdit.setStoryName(storyDTO.getStoryName());
-        }
-        if (storyDTO.getStoryText() != null) {
+        } else if(storyDTO.getStoryName().isEmpty()) {
             storyToEdit.setStoryText(storyDTO.getStoryText());
         }
         storyRepo.save(storyToEdit);
