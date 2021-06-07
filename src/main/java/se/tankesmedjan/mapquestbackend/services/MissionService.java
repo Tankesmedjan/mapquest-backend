@@ -82,14 +82,10 @@ public class MissionService {
      */
     public MissionDTO editMission(Long id, MissionDTO missionDTO) {
         Mission missionEdit = missionRepo.findMissionById(id);
-        Mission missionStory = MissionMapper.INSTANCE.dtoToMission(missionDTO);
 
         missionEdit.setMissionName(missionDTO.getMissionName());
         missionEdit.setMissionDescription(missionDTO.getMissionDescription());
-        missionEdit.setIzQuestion(missionDTO.isIzQuestion());
         missionEdit.setShortDescription(missionDTO.getShortDescription());
-        missionEdit.setWinnerScore(missionDTO.getWinnerScore());
-        missionEdit.setStory(missionStory.getStory());
         missionRepo.save(missionEdit);
         missionDTO.setMissionId(missionEdit.getId());
 
