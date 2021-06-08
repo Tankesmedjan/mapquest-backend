@@ -17,14 +17,30 @@ public class GameProgressService {
         this.gameProgressRepo = gameProgressRepo;
     }
 
+    /**
+     * Basic method for saving GameProgress
+     * @param gameProgress the body of a GameProgress entity
+     * @return saves the GameProgress
+     */
     public GameProgress addGameProgress(GameProgress gameProgress) {
         return gameProgressRepo.save(gameProgress);
     }
 
+    /**
+     * Method for getting the gameprogress for a specific team
+     * @param gameid the id of the game
+     * @param teamid the id of the team
+     * @return the gameprogress
+     */
     public List<GameProgress> findGameProgress(Long gameid, Long teamid) {
         return gameProgressRepo.findGameProgressByGameid(gameid, teamid);
     }
 
+    /**
+     * Method for getting GameProgress for a specific game
+     * @param gameid the id of the game
+     * @return the gameprogress for the game
+     */
     public List<GameProgress> findSingleGameProgress(Long gameid) {
         return gameProgressRepo.findSingleGameProgressByGameid(gameid);
     }
