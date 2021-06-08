@@ -50,4 +50,12 @@ public class GameMissionService {
         gameMissionRepo.delete(gameMission);
         return gameMission;
     }
+
+    public GameMission addCoordinates(Long id, GameMissionDTO gameMissionDTO) {
+        GameMission gameMission = gameMissionRepo.findGameMissionById(id);
+        gameMission.setLat(gameMissionDTO.getLat());
+        gameMission.setLng(gameMissionDTO.getLng());
+        gameMissionRepo.save(gameMission);
+        return gameMission;
+    }
 }

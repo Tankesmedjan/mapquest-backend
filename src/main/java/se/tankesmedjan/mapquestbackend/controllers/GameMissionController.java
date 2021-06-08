@@ -36,5 +36,8 @@ public class GameMissionController {
         return "Successfully deleted the GameMission by the id of: " + gameMissionService.deleteGameMission(id).getId();
     }
 
-
+    @PutMapping("/edit")
+    public GameMission addCoordinates(@Param("id") Long id, @RequestBody GameMissionDTO gameMissionDTO) {
+        return gameMissionService.addCoordinates(id, gameMissionDTO);
+    }
 }
