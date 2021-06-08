@@ -103,6 +103,11 @@ public class UserService {
         return ts;
     }
 
+    /**
+     * Basic method for getting a game with a specific user
+     * @param id the id of the user
+     * @return the game
+     */
     public List<Game> findUserGames(String id) {
         return userRepo.findGameByUserId(id);
     }
