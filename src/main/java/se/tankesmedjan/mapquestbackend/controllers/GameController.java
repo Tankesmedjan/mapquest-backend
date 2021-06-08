@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import se.tankesmedjan.mapquestbackend.dto.GameDTO;
-import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
 import se.tankesmedjan.mapquestbackend.models.Game;
 import se.tankesmedjan.mapquestbackend.services.GameService;
 

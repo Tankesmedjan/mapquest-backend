@@ -3,10 +3,8 @@ package se.tankesmedjan.mapquestbackend.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.tankesmedjan.mapquestbackend.dto.GameDTO;
-import se.tankesmedjan.mapquestbackend.dto.StoryDTO;
 import se.tankesmedjan.mapquestbackend.mappers.GameMapper;
 import se.tankesmedjan.mapquestbackend.models.Game;
-import se.tankesmedjan.mapquestbackend.models.Story;
 import se.tankesmedjan.mapquestbackend.repositories.GameRepo;
 
 import java.util.List;
