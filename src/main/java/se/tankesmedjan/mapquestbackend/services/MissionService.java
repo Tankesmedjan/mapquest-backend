@@ -82,25 +82,42 @@ public class MissionService {
      */
     public MissionDTO editMission(Long id, MissionDTO missionDTO) {
         Mission missionEdit = missionRepo.findMissionById(id);
-        Mission missionStory = MissionMapper.INSTANCE.dtoToMission(missionDTO);
 
-        missionEdit.setMissionName(missionDTO.getMissionName());
-        missionEdit.setMissionDescription(missionDTO.getMissionDescription());
-        missionEdit.setShortDescription(missionDTO.getShortDescription());
-        missionEdit.setStory(missionStory.getStory());
-        missionEdit.setIzQuestion(missionDTO.isIzQuestion());
-        missionEdit.setWinnerScore(missionDTO.getWinnerScore());
+        if(!missionDTO.getMissionName().isEmpty()) {
+            missionEdit.setMissionName(missionDTO.getMissionName());
+        }
+        if(!missionDTO.getMissionDescription().isEmpty()) {
+            missionEdit.setMissionDescription(missionDTO.getMissionDescription());
+        }
+        if(!missionDTO.getShortDescription().isEmpty()) {
+            missionEdit.setShortDescription(missionDTO.getShortDescription());
+        }
+        if(missionDTO.isIzQuestion()) {
+            missionEdit.setIzQuestion(missionDTO.isIzQuestion());
+        }
+        if(missionDTO.getWinnerScore() != null) {
+            missionEdit.setWinnerScore(missionDTO.getWinnerScore());
+        }
         missionRepo.save(missionEdit);
-        missionDTO.setMissionId(missionEdit.getId());
 
         if(missionEdit.isIzQuestion()) {
             MissionQA missionQAEdit = missionQARepo.findMissionQAbyMissionId(id);
 
-            missionQAEdit.setAnswer1(missionDTO.getAnswer1());
-            missionQAEdit.setAnswerX(missionDTO.getAnswerX());
-            missionQAEdit.setAnswer2(missionDTO.getAnswer2());
-            missionQAEdit.setQuestion(missionDTO.getQuestion());
-            missionQAEdit.setCorrectAnswer(missionDTO.getCorrectAnswer());
+            if(!missionDTO.getAnswer1().isEmpty()) {
+                missionQAEdit.setAnswer1(missionDTO.getAnswer1());
+            }
+            if(!missionDTO.getAnswerX().isEmpty()) {
+                missionQAEdit.setAnswerX(missionDTO.getAnswerX());
+            }
+            if(!missionDTO.getAnswer2().isEmpty()) {
+                missionQAEdit.setAnswer2(missionDTO.getAnswer2());
+            }
+            if(!missionDTO.getQuestion().isEmpty()) {
+                missionQAEdit.setQuestion(missionDTO.getQuestion());
+            }
+            if(!missionDTO.getCorrectAnswer().isEmpty()) {
+                missionQAEdit.setCorrectAnswer(missionDTO.getCorrectAnswer());
+            }
             missionQARepo.save(missionQAEdit);
             missionEdit.setMissionQAs(missionQAEdit);
             return missionDTO;
