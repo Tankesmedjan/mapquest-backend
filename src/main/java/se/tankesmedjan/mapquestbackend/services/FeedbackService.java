@@ -16,6 +16,11 @@ public class FeedbackService {
         this.feedbackRepo = feedbackRepo;
     }
 
+    /**
+     * Basic method for adding feedback.
+     * @param feedbackDTO the body of a FeedbackDTO
+     * @return saves the feedback
+     */
     public FeedbackDTO getFeedback(FeedbackDTO feedbackDTO) {
         feedbackRepo.save(FeedbackMapper.INSTANCE.dtoToFeedback(feedbackDTO));
         return feedbackDTO;
